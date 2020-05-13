@@ -4,6 +4,12 @@ In order to extract roll damping parameters from the roll decay tests, parameter
 \begin{equation} \label{eq:R2}
 R^2=1-\frac{SS_{res}}{SS_{tot}}
 \end{equation}
-Where $SS_{res}$ is sum of squares of residuals and $SS_{tot}$ is total sum of squares.
+Where $SS_{res}$ is sum of squares of residuals and $SS_{tot}$ is total sum of squares. Two different solution approaches have been investigated for the system identification: a "Derivation approach" and an "Integration approach". 
 
-The parameters are found by solving a nonlinear least-squares problem using the Trust Region Reflective algorithm with smooth approximation of l1 (absolute value) loss which is usually a good choice for robust least squares.
+In the "Derivation approach" the first and second roll time derivatives are calculated numerically so that the parameters in the models are the only unknowns and the optimal parameters that gives the best fit can simply be determined using a least square fit.
+
+In the "Integration approach" the parameters are found by solving a nonlinear least-squares problem using \emph{SciPy} method \emph{least\_squares} \cite{noauthor_scipyoptimizeleast_squares_nodate} and the Trust Region Reflective algorithm with smooth approximation of l1 (absolute value). This approach requires that ordinary differential equation is solved for many "guessed" sets of parameters till the solution converges.
+
+The "Derivation approach" has the advantage of being very much faster than the "Integration approach" but also the disadvantage of needing to calculate the numerical derivatives which for measurement data also requires some low pass filtration. The "Integration approach" may however also have a disadvantage of not converging.
+
+A validation of the developed system identification method has been conducted by checking that known parameters from signals from simulations with the linear, quadratic and cubic models can all be identified. 
