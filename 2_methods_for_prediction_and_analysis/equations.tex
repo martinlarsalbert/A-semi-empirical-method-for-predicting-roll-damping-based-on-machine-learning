@@ -1,3 +1,23 @@
 \subsection{Equations}
 \label{se:equations}
-The roll motion can be written as:
+The roll motion can be written as \cite{himeno_prediction_1981}:
+\input{equations/roll_equation_himeno}
+
+The equation express the roll moment [Nm] along a longitudinal axis though the centre of gravity.
+Where $A_{44}$ is the virtual mass moment of inertia, $B_{44}$ is the roll damping moment and $C_{44}$ is the restoring moment. $M_{44}$ represents the external moment (usually moment from external waves).
+
+The roll damping moment $B_{44}$ is the primary interest in this paper. The $B_{44}$ is determined using model scale roll decay tests. $B_{44}$ is determined using system identification, by finding the best fit to the following equation:
+\input{equations/roll_decay_equation_general_himeno}
+The external moment is zero during a roll decay test, since there are no external forces present.
+
+The $B_{44}$ can be expressed as a series expansion:  
+$ B_{44} = B_1\cdot\dot{\phi} + B_2\cdot\dot{\phi}\left|\dot{\phi}\right| + B_3\cdot\dot{\phi}^3 + ...$
+
+Truncating this series at the cubic term gives a "cubic model":
+\input{equations/roll_decay_equation_cubic}
+
+Truncating this series at the quadratic term gives a "quadratic damping model":Truncating this series at the quadratic term gives a "quadratic model":
+\input{equations/roll_decay_equation_himeno_quadratic}
+
+Truncating this series at the linear term gives a "linear model":
+\input{equations/roll_decay_equation_linear}
