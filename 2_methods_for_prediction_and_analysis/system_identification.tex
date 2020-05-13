@@ -1,3 +1,9 @@
 \subsection{System identification}
 \label{se:system_identification}
+In order to extract roll damping parameters from the roll decay tests, parameters in the cubic, quadratic or linear roll decay models should be identified. The roll angle is measured during the roll decay tests. The system identification is defined as finding the parameters that produce a simulated roll signal that best fits the roll decay test measurement. The goodness of the fit is described using the coefficient of determination:
+\begin{equation} \label{eq:R2}
+R^2=1-\frac{SS_{res}}{SS_{tot}}
+\end{equation}
+Where $SS_{res}$ is sum of squares of residuals and $SS_{tot}$ is total sum of squares.
 
+The parameters are found by solving a nonlinear least-squares problem using the Trust Region Reflective algorithm with smooth approximation of l1 (absolute value) loss which is usually a good choice for robust least squares.

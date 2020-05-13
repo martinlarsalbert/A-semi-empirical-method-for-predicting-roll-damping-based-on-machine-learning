@@ -1,2 +1,11 @@
-\subsection{Analytical solution}
+\subsection{Solving ODEs}
 \label{se:analytical_solution}
+The ordinary differential equations for roll motion in equation \ref{eq:roll_decay_equation_cubic}, \ref{eq:roll_decay_equation_himeno_quadratic} and
+\ref{eq:roll_decay_equation_himeno_linear} are solved numerically using Explicit Runge-Kutta method of order 5(4). Figure \ref{fig:analytical} shows a comparison for the linear model between this kind of numerical solution and the exact analytical solution \cite{henry_peter_piehl_ship_nodate}. It seems that the numerical solution agrees well with the analytical. 
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/analytical.pdf}
+    \caption{Analytical and numerical solution to the linear model}
+    \label{fig:analytical}
+\end{figure}
