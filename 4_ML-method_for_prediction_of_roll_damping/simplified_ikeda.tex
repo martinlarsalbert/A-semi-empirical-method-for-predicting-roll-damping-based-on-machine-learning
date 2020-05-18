@@ -17,8 +17,7 @@ In order to obtain the damping coefficients $B_1$ and $B_2$ in the quadratic mod
 
 A parameter variation was conducted in order to study the simplified method.
 A "median ship" with the most usual parameters in the database was chosen as the baseline of the variation. The parameters were varied to the extreme values of the database. Figure \ref{fig:ikeda_variation} shows this variation where all parameters have been none dimensionalized using froude scaling with $L_{pp}$ as scale factor. 
-It seems that length to beam ratio between 0.23 and 0.24 has a huge peak. Also length to draft ratio below 0.034 has a large peak. This confirms the small draft to beam ratio limit of this method as mentioned in \cite{kawahara_simple_2011}.
-
+It seems that length to beam ratio between 0.23 and 0.24 has a huge peak. Also length to draft ratio below 0.034 has a large peak. 
 
 \begin{figure}[H]
     \centering
@@ -26,3 +25,36 @@ It seems that length to beam ratio between 0.23 and 0.24 has a huge peak. Also l
     \caption{Simplified method parameter variation}
     \label{fig:ikeda_variation}
 \end{figure}
+
+Figure \ref{fig:B_e_hat_ikeda} shows a comparison of the nondimensional equivalent linear damping from model tests and the simplified method.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/B_e_hat_ikeda.pdf}
+    \caption{Nondimensional linearized damping from model tests and simplified Ikeda}
+    \label{fig:B_e_hat_ikeda}
+\end{figure}
+
+When plotting the error between the model test and simplified Ikeda method in figure \ref{fig:B_e_hat_error} this shows that the error is much larger for $T/L_{pp}<0.034$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/B_e_hat_error.pdf}
+    \caption{Simplified Ikeda error versus draught}
+    \label{fig:B_e_hat_error}
+\end{figure}
+
+Figure \ref{fig:B_e_hat_good} shows the comparison for only model tests with $T/L_{pp}>0.034$.
+This confirms the small draft to beam ratio limit of this method as mentioned in \cite{kawahara_simple_2011}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/B_e_hat_good.pdf}
+    \caption{Nondimensional linearized damping from model tests and simplified Ikeda $T/L_{pp}>0.034$}
+    \label{fig:B_e_hat_good}
+\end{figure}
+
+
+
+
+
