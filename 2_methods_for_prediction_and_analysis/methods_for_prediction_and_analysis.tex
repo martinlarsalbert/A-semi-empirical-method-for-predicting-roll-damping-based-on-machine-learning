@@ -22,8 +22,14 @@ The Ikeda method \cite{ikeda_roll_1978}, \cite{ikeda_eddy_1978}, \cite{ikeda_rol
 B = B_F + B_E + B_L + B_W + B_{BK}
 \end{equation}
 
-This method divides the roll damping into friction, eddy, lift, waves and bilge keel components (see equation \ref{eq:ikeda}. The wave and eddy components require strip method calculations. This is not an attractive option for the present study since that would require calculations with exact hull geometries to be carried out for all of the ships in the study. There exist however a \emph{Simplified Ikeda method} \cite{kawahara_simple_2011} that is instead used in this study to calculate the eddy component $B_E$ and wave component $B_W$.
+This method divides the roll damping into friction, eddy, lift, waves and bilge keel components (see equation \ref{eq:ikeda}. The wave and eddy components require strip method calculations. This is not an attractive option for the present study since that would require calculations with exact hull geometries to be carried out for all of the ships in the study. There exist however a \emph{Simplified Ikeda method} \cite{kawahara_simple_2011} that is instead used in this study to calculate the eddy component $B_E$ and wave component $B_W$. Figure \ref{fig:ikeda_vs_simplified} shows a comparison between roll damping components calculated with \emph{Ikeda} and \emph{Simplified Ikeda method}. The roll damping is under-predicted with the simplified method for this particular case which is expected according to the limitations of this method  \cite{kawahara_simple_2011}.
 
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/ikeda_vs_simplified.pdf}
+    \caption{Roll damping components calculated with Ikeda and Simplified Ikeda for PCTC Faust}
+    \label{fig:ikeda_vs_simplified}
+\end{figure}
 
 \input{2_methods_for_prediction_and_analysis/equations}
 \input{2_methods_for_prediction_and_analysis/analytical_solution}
