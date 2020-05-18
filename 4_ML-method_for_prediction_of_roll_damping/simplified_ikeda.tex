@@ -4,8 +4,13 @@ The \emph{Simplified Ikeda method} \cite{kawahara_simple_2011} has been implemen
 The method has been implemented as a function where the total roll damping and its component is calcultated: 
 \input{equations/simplified_ikeda_equation}
 
-
-
-
-The equivalent linear damping coefficient 
+A quadratic roll damping model can be linearized using the equivalent linear damping coefficient \cite{himeno_prediction_1981}:
 \input{equations/B_e_equation}
+In order to obtain the damping coefficients $B_1$ and $B_2$ in the quadratic model in equation \ref{eq:roll_decay_equation_himeno_quadratic} roll damping is calculated for two or more roll amplitudes ($\phi_a$). $B_1$ and $B_2$ is obtained by fitting equation \ref{eq:B_e_equation} to this data as shown in figure \ref{fig:ikeda_B_1_B2}.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{figures/ikeda_B_1_B_2.pdf}
+    \caption{Variation of roll amplitude to derive $B_1$ and $B_2$}
+    \label{fig:ikeda_B_1_B2}
+\end{figure}
