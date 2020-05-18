@@ -16,15 +16,14 @@ The Ikeda method has been used to calculate the roll damping for a PCTC vessel F
 \end{figure}
 
 \subsection{Existing semi-empirical methods}
-\cite{ikeda_roll_1978}, \cite{ikeda_eddy_1978}, \cite{ikeda_roll_1979}, \cite{ikeda_components_1978}
-Ikedas original method require strip method calculations. This is not an attractive option for the present study since that would require calculations with exact hull geometries to be carried out for all of the ships in the study. There exist however a \emph{Simplified Ikeda method} \cite{kawahara_simple_2011} that is instead used in this study \emph{Simplified Ikeda method} predicts the roll damping components at zero speed.
+The Ikeda method \cite{ikeda_roll_1978}, \cite{ikeda_eddy_1978}, \cite{ikeda_roll_1979}, \cite{ikeda_components_1978}, \cite{ikeda_velocity_1979} is the most well known semi empirical method to predict roll damping. 
 
-A study of the has been conducted which shows the roll damping components for various speeds. Calculations with *Ikeda original method* and the *Simplified method* have been carried for two ships (*S175* and *Faust*). The two methods show reasonable agreement for zero speed.
+\begin{equation} \label{eq:ikeda}
+B = B_F + B_E + B_L + B_W + B_{BK}
+\end{equation}
 
-In order to introduce a speed dependency to the *Simplified method* the following is conducted:
-* Add Lift damping $B_L$.
-* Add speed dependence of wave damping $\frac{B_W}{B_{W0}}$
-* Remove $B_E$ at ($F_n>0.15$) ?
+This method divides the roll damping into friction, eddy, lift, waves and bilge keel components (see equation \ref{eq:ikeda}. The wave and eddy components require strip method calculations. This is not an attractive option for the present study since that would require calculations with exact hull geometries to be carried out for all of the ships in the study. There exist however a \emph{Simplified Ikeda method} \cite{kawahara_simple_2011} that is instead used in this study to calculate the eddy component $B_E$ and wave component $B_W$.
+
 
 \input{2_methods_for_prediction_and_analysis/equations}
 \input{2_methods_for_prediction_and_analysis/analytical_solution}
