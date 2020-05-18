@@ -1,9 +1,14 @@
 \section{Database of roll decay tests}
 \label{se:database_of_roll_decay_tests}
 
+227 Roll decay tests have been collected with main parameters according to figure \ref{fig:ship_parameters}.
+
+and the parameters in the linear, quadratic and cubic model have been identified using the system identification techniques as described in section \ref{se:system_identification}. The $R^2$ score coefficient was calculated for each model and model test. The mean $R^2$ was 0.995 for the cubic model, 0.993 for the quadratic and 0.986 for the linear model. The quadratic model has almost the same accuracy as the cubic and is therefore chosen to be used for the rest of this project.   
+
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\columnwidth]{figures/sh}
-    \caption{Nondimensional linearized damping from model tests and simplified Ikeda}
-    \label{fig:B_e_hat_ikeda}
+    \includegraphics[width=0.9\columnwidth]{figures/ship_parameters.pdf}
+    \caption{Histograms of ship parameters from the model tests, all parameters except CB and A0 have been normalized with Lpp}
+    \label{fig:ship_parameters}
 \end{figure}
