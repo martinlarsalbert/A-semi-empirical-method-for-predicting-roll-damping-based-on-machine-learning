@@ -5,6 +5,9 @@
 \usepackage{graphicx}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \usepackage{float}
+\usepackage[T1]{fontenc}
+\usepackage{nomencl}
+\makenomenclature
 
 \title{ A semi-empirical method for predicting roll damping based on machine learning }
 \renewcommand\Authfont{\small}
@@ -31,6 +34,8 @@
 \newpage
 
 \include{1_introduction/introduction}
+\input{nomenclature}
+
 \include{2_methods_for_prediction_and_analysis/methods_for_prediction_and_analysis}
 \include{3_database_of_roll_decay_tests/database_of_roll_decay_tests}
 \include{4_ML-method_for_prediction_of_roll_damping/simplified_ikeda}
