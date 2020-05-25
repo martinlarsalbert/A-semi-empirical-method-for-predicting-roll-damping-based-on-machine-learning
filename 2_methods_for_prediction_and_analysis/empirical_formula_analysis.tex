@@ -23,23 +23,3 @@ B = B_F + B_E + B_L + B_W + B_{BK}
 \end{equation}
 
 This method divides the roll damping into friction, eddy, lift, waves and bilge keel components (see equation \ref{eq:ikeda}. The wave and eddy components require strip method calculations. This is not an attractive option for the present study since that would require calculations with exact hull geometries to be carried out for all of the ships in the study. There exist however a \emph{Simplified Ikeda method} \cite{kawahara_simple_2011} that is instead used in this study to calculate the eddy component $B_E$ and wave component $B_W$. Figure \ref{fig:ikeda_vs_simplified} shows a comparison between roll damping components calculated with \emph{Ikeda} and \emph{Simplified Ikeda method}. The roll damping is under-predicted with the simplified method for this particular case which is expected according to the limitations of this method  \cite{kawahara_simple_2011}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\columnwidth]{figures/ikeda_B_1_B_2.pdf}
-    \caption{Variation of roll amplitude to derive $B_1$ and $B_2$}
-    \label{fig:ikeda_B_1_B2}
-\end{figure}
-
-A parameter variation was conducted in order to study the simplified method.
-A "median ship" with the most usual parameters in the database was chosen as the baseline of the variation. The parameters were varied to the extreme values of the database, see figure \ref{fig:ship_parameters} for more details. 
-
-Figure \ref{fig:ikeda_variation} shows this variation where all parameters have been none dimensionalized using froude scaling with $L_{pp}$ as scale factor. 
-It seems that length to beam ratio between 0.23 and 0.24 has a huge peak. Also length to draft ratio below 0.034 has a large peak. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\columnwidth]{figures/ikeda_variation.pdf}
-    \caption{Simplified method parameter variation}
-    \label{fig:ikeda_variation}
-\end{figure}
