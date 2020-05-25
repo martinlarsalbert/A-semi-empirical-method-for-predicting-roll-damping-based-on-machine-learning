@@ -1,11 +1,15 @@
-\section{ML-method for prediction of roll damping}
-\label{se:regression} 
-
 \subsection{Simplified Ikeda method}
 \label{se:simplified_ikeda}
 The \emph{Simplified Ikeda method} \cite{kawahara_simple_2011} has been implemented with the intention to be used both as a benchmark and maybe also as a sub-component of a new method. The examples from \cite{kawahara_simple_2011} was recalculated to check that the method has been implemented correctly.
 The method has been implemented as a function where the total roll damping and its component is calcultated: 
 \input{equations/simplified_ikeda_equation}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{figures/ikeda_variation.pdf}
+    \caption{Simplified method parameter variation}
+    \label{fig:ikeda_variation}
+\end{figure}
 
 A quadratic roll damping model can be linearized using the equivalent linear damping coefficient \cite{himeno_prediction_1981}:
 \input{equations/B_e_equation}
@@ -24,40 +28,17 @@ A "median ship" with the most usual parameters in the database was chosen as the
 Figure \ref{fig:ikeda_variation} shows this variation where all parameters have been none dimensionalized using froude scaling with $L_{pp}$ as scale factor. 
 It seems that length to beam ratio between 0.23 and 0.24 has a huge peak. Also length to draft ratio below 0.034 has a large peak. 
 
-\begin{figure}[H]
+
+
+\begin{figure}[h]
     \centering
-    \includegraphics[width=0.9\columnwidth]{figures/ikeda_variation.pdf}
-    \caption{Simplified method parameter variation}
-    \label{fig:ikeda_variation}
+    \includegraphics[width=\columnwidth]{figures/ikeda_vs_simplified.pdf}
+    \caption{Roll damping components calculated with Ikeda and Simplified Ikeda for PCTC Faust}
+    \label{fig:ikeda_vs_simplified}
 \end{figure}
 
-Figure \ref{fig:B_e_hat_ikeda} shows a comparison of the nondimensional equivalent linear damping from model tests and the simplified method.  
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\columnwidth]{figures/B_e_hat_ikeda.pdf}
-    \caption{Nondimensional linearized damping from model tests and simplified Ikeda}
-    \label{fig:B_e_hat_ikeda}
-\end{figure}
 
-When plotting the error between the model test and simplified Ikeda method in figure \ref{fig:B_e_hat_error} this shows that the error is much larger for $T/L_{pp}<0.034$
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\columnwidth]{figures/B_e_hat_error.pdf}
-    \caption{Simplified Ikeda error versus draught}
-    \label{fig:B_e_hat_error}
-\end{figure}
-
-Figure \ref{fig:B_e_hat_good} shows the comparison for only model tests with $T/L_{pp}>0.034$.
-This confirms the small draft to beam ratio limit of this method as mentioned in \cite{kawahara_simple_2011}. The corresponding $R^2$ score is 0.38.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\columnwidth]{figures/B_e_hat_good.pdf}
-    \caption{Nondimensional linearized damping from model tests and simplified Ikeda $T/L_{pp}>0.034$}
-    \label{fig:B_e_hat_good}
-\end{figure}
 
 
 
