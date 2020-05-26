@@ -11,9 +11,9 @@ The ordinary differential equations for roll motion in equation \ref{eq:roll_dec
     \label{fig:analytical}
 \end{figure}
 
-\subsection{Linear regression and goodness of fitting}
-\textcolor{blue}{\textbf{Here we would like to introduce some regression methods to improve the accuracy of Ikeda\'s method for the roll damping for SSPA towing tank tests. The methods we are using is described as follows.}}
 
+\subsection{Parameter Identification Technique}
+\label{se:PIT}
 In order to extract roll damping parameters from the roll decay tests, parameters in the cubic, quadratic or linear roll decay models should be identified. The roll angle is measured during the roll decay tests. The system identification is defined as finding the parameters that produce a simulated roll signal that best fits the roll decay test measurement. The goodness of the fit is described using the coefficient of determination:
 \begin{equation} \label{eq:R2}
 R^2=1-\frac{SS_{res}}{SS_{tot}}
@@ -27,3 +27,12 @@ In the "Integration approach" the parameters are found by solving a nonlinear le
 The "Derivation approach" has the advantage of being very much faster than the "Integration approach" but also the disadvantage of needing to calculate the numerical derivatives which for measurement data also requires some low pass filtration. The "Integration approach" may however also have a disadvantage of not converging.
 
 A validation of the developed system identification method has been conducted by checking that known parameters from signals from simulations with the linear, quadratic and cubic models can all be identified. 
+
+Figure \ref{fig:roll_decay_model_compare} shows a comparison between the linear, quadratic and cubic model, where it can be seen that the linear model can not give a perfect representation for the whole range of roll angles.    
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\columnwidth]{figures/roll_decay_model_compare.pdf}
+    \caption{Roll decay test comparison of linear, quadratic and cubic model}
+    \label{fig:roll_decay_model_compare}
+\end{figure}
