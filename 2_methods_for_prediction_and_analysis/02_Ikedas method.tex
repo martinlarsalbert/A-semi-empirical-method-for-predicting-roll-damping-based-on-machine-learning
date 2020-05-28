@@ -1,5 +1,5 @@
 
-\subsection{Ikeda's original method: a strip theory based method}
+\subsection{Ikeda's method: from strip theory to semi-empirical formulas}
 \label{se:semi-empirical methods}
 Since the scale effect of the damping is mainly associated with the skin friction on ship hulls and the friction only contributes very little to a ship's total roll damping, the most reliable way to obtain a ship's roll damping coefficients is to carry out model scale experimental tests. 
 While in a ship's early design stage when only limited information is available and flexible to be adjusted, such as the ship's principal dimensions and the basic hull geometry, some semi-empirical methods were also proposed to predict the roll damping (\parencite{himeno_prediction_1981}). The most recognize method was developed in a series of research articles (\parencite{ikeda_roll_1978}, \parencite{ikeda_eddy_1978}, \parencite{ikeda_roll_1979}, \parencite{ikeda_components_1978}, \parencite{ikeda_velocity_1979}), and it is well-known to be named as Ikeda's method. This method divides the roll damping into five damping components, i.e., the friction component $B_F$, the eddy component $B_e$, the lift component $B_L$, the wave component $B_W$ and the bilge keel component $B_BK$, as in the following Eq.(\ref{eq:ikeda}), 
@@ -36,3 +36,32 @@ The Ikeda method has been used to calculate the roll damping for a PCTC vessel F
     \caption{Roll damping components calculated with Ikeda and Simplified Ikeda for PCTC Faust}
     \label{fig:ikeda_vs_simplified}
 \end{figure}
+
+The Simplified Ikeda method \cite{kawahara_simple_2011} has been implemented \cite{alexandersson_martinlarsalbertrolldecay-estimators_2020} with the intention to be used both as a benchmark and maybe also as a sub-component of a new method. The examples from \cite{kawahara_simple_2011} was recalculated to check that the method has been implemented correctly. The authors have been unable to find other ways to validate the implementation, which introduces some uncertainty to the comparisons. The method has been implemented as a function where the total roll damping and its component is calcultated: 
+\input{equations/simplified_ikeda_equation}
+
+A quadratic roll damping model can be linearized using the equivalent linear damping coefficient \cite{himeno_prediction_1981}:
+\input{equations/B_e_equation}
+In order to obtain the damping coefficients $B_1$ and $B_2$ in the quadratic model in equation \ref{eq:roll_decay_equation_himeno_quadratic} roll damping is calculated for two or more roll amplitudes ($\phi_a$). $B_1$ and $B_2$ is obtained by fitting equation \ref{eq:B_e_equation} to this data as shown in figure \ref{fig:ikeda_B_1_B2}.  
+
+A parameter variation was conducted in order to study the simplified method.
+A "median ship" with the most usual parameters in the database was chosen as the baseline of the variation. The parameters were varied to the extreme values of the database, see figure \ref{fig:ship_parameters} for more details. 
+
+Figure \ref{fig:ikeda_variation} shows this variation where all parameters have been none dimensionalized using froude scaling with $L_{pp}$ as scale factor. 
+It seems that length to beam ratio between 0.23 and 0.24 has a huge peak. Also length to draft ratio below 0.034 has a large peak. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm, width=8cm]{figures/ikeda_B_1_B_2.pdf}
+    \vspace{-0.5cm}
+    \caption{Variation of roll amplitude to derive $B_1$ and $B_2$}
+    \label{fig:ikeda_B_1_B2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=13cm, width=15cm]{figures/ikeda_variation.pdf}
+    \caption{Simplified method parameter variation}
+    \label{fig:ikeda_variation}
+\end{figure}
+
