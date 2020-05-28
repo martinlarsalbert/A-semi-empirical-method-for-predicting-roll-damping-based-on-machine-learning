@@ -1,15 +1,7 @@
-\subsection{Simplified Ikeda method}
+\subsection{Simplified Ikeda's method: semi-empirical formulas}
 \label{se:simplified_ikeda}
-The \emph{Simplified Ikeda method} \cite{kawahara_simple_2011} has been implemented with the intention to be used both as a benchmark and maybe also as a sub-component of a new method. The examples from \cite{kawahara_simple_2011} was recalculated to check that the method has been implemented correctly.
-The method has been implemented as a function where the total roll damping and its component is calcultated: 
+The Simplified Ikeda method \cite{kawahara_simple_2011} has been implemented \cite{alexandersson_martinlarsalbertrolldecay-estimators_2020} with the intention to be used both as a benchmark and maybe also as a sub-component of a new method. The examples from \cite{kawahara_simple_2011} was recalculated to check that the method has been implemented correctly. The authors have been unable to find other ways to validate the implementation, which introduces some uncertainty to the comparisons. The method has been implemented as a function where the total roll damping and its component is calcultated: 
 \input{equations/simplified_ikeda_equation}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\columnwidth]{figures/ikeda_variation.pdf}
-    \caption{Simplified method parameter variation}
-    \label{fig:ikeda_variation}
-\end{figure}
 
 A quadratic roll damping model can be linearized using the equivalent linear damping coefficient \cite{himeno_prediction_1981}:
 \input{equations/B_e_equation}
@@ -23,16 +15,17 @@ It seems that length to beam ratio between 0.23 and 0.24 has a huge peak. Also l
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\columnwidth]{figures/ikeda_B_1_B_2.pdf}
+    \includegraphics[height=5cm, width=8cm]{figures/ikeda_B_1_B_2.pdf}
+    \vspace{-0.5cm}
     \caption{Variation of roll amplitude to derive $B_1$ and $B_2$}
     \label{fig:ikeda_B_1_B2}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=\columnwidth]{figures/ikeda_vs_simplified.pdf}
-    \caption{Roll damping components calculated with Ikeda and Simplified Ikeda for PCTC Faust}
-    \label{fig:ikeda_vs_simplified}
+    \includegraphics[height=13cm, width=15cm]{figures/ikeda_variation.pdf}
+    \caption{Simplified method parameter variation}
+    \label{fig:ikeda_variation}
 \end{figure}
 
 

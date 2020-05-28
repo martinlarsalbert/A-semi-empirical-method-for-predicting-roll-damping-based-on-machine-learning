@@ -2,60 +2,28 @@
 \label{se:methods_for_prediction_and_analysis}
 %\subsection{Equations}
 %\label{se:equations}
-From roll decay tests roll damping coefficients are normally derived based on the
-logarithmic decrement of the roll peaks. However, this approach is sensitive to lowfrequency disturbances and noise, which does not have to be a problem in controlled
-model test environment, but is difficult to avoid during full scale tests. An alternative
-and more robust approach, which utilizes full time series of roll decay tests and
-not only the peaks, is the numerical Parameter Identification Technique (PIT) as
-described in IMO (2006) and also used in Bulian (2004). In this approach a numerical
-solution to a one degree of freedom roll equation is fitted to the roll decay time series
-by tuning the parameters in the roll equation.
-To evaluate the performed tests, a modified version of the PIT approach is developed. This modified approach adds a time-dependent second-degree polynomial to
-the fitting, that later can be separated from the solution to account for low frequency
-disturbances. The roll equation that is used for the evaluation has a linear-quadratic
-10 Assessment of Ship Roll Damping Through … 183
-damping dependence and a linear restoring term. It should be noted that even though
-the approach could well handle roll equations with higher order of non-linearities in
-the damping term as well as a non-linear restoring term, the limited amplitudes at
-which the roll decay tests was conducted cannot motivate advantages of higher order
-models.
-The equation of a freely oscillating roll motion with linear-quadratic damping can
-in non-dimensional form be expressed as
+The hydrodynamic governing equation to describe a ship's six degrees of motions when sailing in waters is also written as a damped spring mass equations. In order to limit the scope of the study focusing on the roll damping, the second-order differential equation can be used to model the physical principles of a ship's roll motion response at sea. Then, the roll moment along a longitudinal axis though the centre of gravity can be expressed by,
 
-The roll motion can be written as \cite{himeno_prediction_1981}:
-\input{equations/roll_equation_himeno}
+\input{equations/roll_equation_himeno} 
 
-The equation express the roll moment [Nm] along a longitudinal axis though the centre of gravity.
-Where $A_{44}$ is the virtual mass moment of inertia, $B_{44}$ is the roll damping moment and $C_{44}$ is the restoring moment. $M_{44}$ represents the external moment (usually moment from external waves).
+where $A_{44}$ is the virtual mass moment of inertia, $B_{44}$ is the roll damping moment and $C_{44}$ is the restoring moment. $M_{44}$ represents the external moment (usually moment from external waves), and is of primary interest in this study. For small roll angles, the restoring moments $C_{44}(\phi)$ can be linearized to $C_{1}\phi$. To model the nonlinear restoring moments, $C_{44}(\phi)$ can be described by a n-th order polynomials as $C_{44}(\phi) = C_{1}\phi + C_{2}\phi^2 + C_{3}\phi^3 +, ..., C_{n}\phi^n $
 
+Different experimental test methods are available to obtain the motion signals that can be used to determine the coefficients in Eq.(\ref{eq:roll_equation_himeno}). In this paper, the model scale roll decay tests are used. Since there are no external forces in such tests, the external moment in Eq.(\ref{eq:roll_equation_himeno}) is zero and the governing equation of the tests becomes, 
 
-
-\textbf{should one put the following descrption in the experimental description.}
-The roll damping moment $B_{44}$ is the primary interest in this paper. The $B_{44}$ is determined using model scale roll decay tests. $B_{44}$ is determined using system identification, by finding the best fit to the following equation:
 \input{equations/roll_decay_equation_general_himeno}
-The external moment is zero during a roll decay test, since there are no external forces present.
 
-The $B_{44}$ can be expressed as a series expansion:  
-$ B_{44} = B_1\cdot\dot{\phi} + B_2\cdot\dot{\phi}\left|\dot{\phi}\right| + B_3\cdot\dot{\phi}^3 + ...$
 
-Truncating this series at the cubic term gives a "cubic model":
+where $B_{44}$ can be expressed as expansion series:  
+$ B_{44} = B_1\cdot\dot{\phi} + B_2\cdot\dot{\phi}\left|\dot{\phi}\right| + B_3\cdot\dot{\phi}^3 + ... + B_n\cdot\dot{\phi}^n$. Most often, the so-called "linear model", "quadratic model" and "cubic model" are used to represent $B_{44}(\dot{\phi})$ in Eq.(\ref{eq:roll_decay_equation_general_himeno}) by truncating the series to keep only linear, quadratic and cubic terms,
+
+\input{equations/roll_decay_equation_himeno_linear}
+\input{equations/roll_decay_equation_himeno_quadratic}
 \input{equations/roll_decay_equation_cubic}
 
-Truncating this series at the quadratic term gives a "quadratic model":Truncating this series at the quadratic term gives a "quadratic model":
-\input{equations/roll_decay_equation_himeno_quadratic}
 
-Truncating this series at the linear term gives a "linear model":
-\input{equations/roll_decay_equation_himeno_linear}
+where the $B_1$ and $B_2$ are recognized as the roll damping coefficients.
+From roll decay tests, those coefficients are normally derived based on the logarithmic decrements of roll peaks. However, this approach is sensitive to low-frequency disturbances and noises. An alternative and more robust approach, which utilizes full time series of roll decay tests and not only the peaks, is the numerical Parameter Identification Technique (PIT) as described in IMO (2006) and also used in Bulian (2004). In this approach a numerical solution to a one degree of freedom roll equation is fitted to the roll decay time series by tuning the parameters in the roll equation.
 
-Peter Piehl \cite{henry_peter_piehl_ship_nodate} shows an analytical solution to the linear model in equation \ref{eq:roll_decay_equation_himeno_linear}, where the natural frequency of the motion is obtained by:
-\input{equations/omega0_equation}
-
-The roll damping and the natural frequency can be made non dimensional using the following expressions \cite{himeno_prediction_1981}: 
-\input{equations/B44_hat_equation}
-\input{equations/omega_hat_equation}
-
-%\input{2_methods_for_prediction_and_analysis/analytical_solution}
-\input{2_methods_for_prediction_and_analysis/experimental_estimation}
-\input{2_methods_for_prediction_and_analysis/empirical_formula_analysis}
-
-\input{2_methods_for_prediction_and_analysis/simplified_ikeda}
+\input{2_methods_for_prediction_and_analysis/01_experimental_estimation}
+\input{2_methods_for_prediction_and_analysis/02_Ikedas method}
+\input{2_methods_for_prediction_and_analysis/03_simplified_ikeda}
