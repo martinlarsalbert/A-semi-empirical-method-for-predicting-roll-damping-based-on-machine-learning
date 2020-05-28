@@ -19,14 +19,14 @@ where $A_{0}$, $OG$, $BK_{L}$ and $BK_{B}$ represent a ship's wetted surface are
 %The Simplified Ikeda method \cite{kawahara_simple_2011} has been implemented \cite{alexandersson_martinlarsalbertrolldecay-estimators_2020} with the intention to be used both as a benchmark and maybe also as a sub-component of a new method. The examples from \cite{kawahara_simple_2011} was recalculated to check that the method has been implemented correctly. The authors have been unable to find other ways to validate the implementation, which introduces some uncertainty to the comparisons. The method has been implemented as a function where the total roll damping and its component is calcultated: 
 
 
-
+{\color{blue}{ \textbf{Martin: Please add a bit more text and clarify the speed correction method.}
 The roll damping consists of linear and nonlinear components. At zero speed the nonlinear damping is caused by the two-dimensional separation at the bilge keel or near the bilge circle (Eddy damping $B_E$). While at speed the nonlinear damping is mainly caused by the hydrodynamic lift force on the hull, represented as lift damping $B_L$. $B_E$ vanishes at high speed ($F_n>0.15)$ \parencite{ikeda_components_1978}.
 The wave damping also changes at speed. Ikeda \parencite{ikeda_components_1978} proposes a formula for the fraction between wave damping at speed and zero speed,
 
 \begin{equation} \label{eq:wave_speed_correction}
-\frac{B_W}{B_{W0}} = f(L, B, .....) 
+\frac{B_W}{B_{W0}} = f(L, B, .....). 
 \end{equation}
-
+}}
 
 
 %\begin{figure}[h]
@@ -37,8 +37,11 @@ The wave damping also changes at speed. Ikeda \parencite{ikeda_components_1978} 
 %\end{figure}
 
 
-
-
+A parameter variation was conducted in order to study the simplified method.
+%A "median ship" with the most usual parameters in the database was chosen as the baseline of the variation. The parameters were varied to the extreme values of the database, see section \ref{se:database_of_roll_decay_tests} for more details. 
+The Ikeda method has been used to calculate the roll damping for a PCTC vessel Faust \parencite{soder_assessment_2019}. For example, Fig. \ref{fig:ikeda_vs_simplified} shows a comparison between roll damping components calculated with the original \emph{Ikeda's method} based on strip theory calculation and the \emph{simplified Ikeda's method}. The roll damping is under-predicted with the simplified method for this particular case which is expected according to the limitations of this method  \parencite{kawahara_simple_2011}.
+Figure \ref{fig:ikeda_variation} shows this variation where all parameters have been none dimensionalized using froude scaling with $L_{pp}$ as scale factor. 
+It seems that length to beam ratio between 0.23 and 0.24 has a huge peak. Also length to draft ratio below 0.034 has a large peak. 
 
 \begin{figure}[h]
     \centering
@@ -46,29 +49,6 @@ The wave damping also changes at speed. Ikeda \parencite{ikeda_components_1978} 
     \caption{Roll damping components calculated with Ikeda and Simplified Ikeda for PCTC Faust}
     \label{fig:ikeda_vs_simplified}
 \end{figure}
-
-
-
-
-
-A parameter variation was conducted in order to study the simplified method.
-A "median ship" with the most usual parameters in the database was chosen as the baseline of the variation. The parameters were varied to the extreme values of the database, see figure \ref{fig:ship_parameters} for more details. 
-
-
-
-The Ikeda method has been used to calculate the roll damping for a PCTC vessel Faust \parencite{soder_assessment_2019}. For example, Fig. \ref{fig:ikeda_vs_simplified} shows a comparison between roll damping components calculated with \emph{Ikeda} and \emph{Simplified Ikeda method}. The roll damping is under-predicted with the simplified method for this particular case which is expected according to the limitations of this method  \parencite{kawahara_simple_2011}.
-
-
-
-
-
-
-
-
-Figure \ref{fig:ikeda_variation} shows this variation where all parameters have been none dimensionalized using froude scaling with $L_{pp}$ as scale factor. 
-It seems that length to beam ratio between 0.23 and 0.24 has a huge peak. Also length to draft ratio below 0.034 has a large peak. 
-
-
 
 \begin{figure}[H]
     \centering
