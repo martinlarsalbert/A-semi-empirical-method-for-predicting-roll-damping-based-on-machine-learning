@@ -6,10 +6,26 @@
 %    \item Roll decay test at zero speed and %speed.
 %    
 %\end{itemize}
-			
-Ship roll has been the subject of several studies over the past decades. Roll damping devices include tuned liquid dampers such as anti-rolling tanks as well as exterior appendages such as bilge keels. Both passive and active anti-rolling devices have been investigated. Theoretical, numerical and experimental studies have been performed and presented in the literature. A classic example of an experimental study is presented by [1] for roll without forward speed. Different components of damping were studied in a series of publications by [2], [3] and [4]. Both naked hulls and hulls with bilge keels were
-studied therein. Due to a significant amount of
-experimental data for conventional hulls with bilge keels, for instance as presented in the above mentioned publications, good empirical formulas have existed for several decades. The report by Himeno (1981) presents a comprehensive summary of the state-of-the-art at that time, and formulas presented therein are still used today IMO (2016).
 
-The computer power and availability of fast, stable NaviérStokes solvers have made it feasible to a larger degree to study the problem numerically in recent years, and this trend is expected to continue. However, having model tests as benchmark data will remain a requirement. The experiemental methods and semi-empirical formulas are still in a great demand espeically in the ship conceptual design and inspections, see IMO (2016). In this paper we present results from experiments and semi-empirical method proposed by Ikeda\'s method of a big database towing tank tests from SSPA. In order to faciliate the usage of the SSPA roll-decay test base, the Ikeda\'s method is further developed to reflect the state-of-the-art ship design with correct roll damping properties. 
+The two-dimensional strip theory based hydrodynamic computation methods are used more frequently in the early stage of today's ship design. It can give us information of a ship's seakeeping properties, wave induced bending and dynamic stability, etc. The strip theory can give quite accurate prediction of a ship's pitch, heave, sway and yaw motions, but often overestimate the roll motions because of significant viscous effects on the roll damping (Kawahara et al. 2011). Therefore, to accurately estimate a ship's roll motions and dynamic stability is important to obtain the roll damping dependent on the ship speed and exciting frequency. The experimental tests are probably the most accepted method to estimate a ship's roll damping (IMO 2006). As the rapid increase of computation capability, the CFD methods has also been used to calculate the roll damping as in Kristiansen et al. (2014) and Piehl (2016). Rare full-scale tests to analyze the roll damping can be also found in Schmiteke (1987) and S\"oder et al. (2012). While the most recognized method for practical applications is the semi-empirical formulas proposed by Ikeda (Ikeda et al. (1976, 1977, and 1978)  also named as Ikeda's method and described in IMO (2006). This semi-empirical method is also recommended by ITTC (2011). In the semi-empirical formulas, the roll damping is divided into 5 components, friction, wave, eddy, hull life and bilge keel (appendages). As reported by Kawahara et al. (2009) and S\"oder et al. (2019), Ikeda's method may not work well for unconventional ships, such as containership and PCTC with pronounced flare bow and stern structures. In addition, the rather widely used simplified Ikeda's method (Himemo 1981) was constructed by a series of old ship hulls, while it might not give a fare estimation of roll damping of today's much optimized ship hull forms. Therefore, the objective of this paper is to check the accuracy of Ikeda's method to predict the roll damping of modern ship hulls, with the intention to propose models to improve Ikeda's method for those modern ship hulls that have been tested in SSPA during the recent 10 years.
 
+To make the completeness of the paper, the following section 2 presents the basic governing functions of roll motions, and parameter identification techniques to find the roll damping if roll decay tests are available. The simplified Ikeda's method is also briefly presented in Section 2. The roll decay test database is presented in Section 3, as well as the roll damping estimated by the system identification techniques as damping references, which are compared with the Ikeda's method to identify weakness of this method. Section 4 proposes a new regression-based method to improve the accuracy of roll damping in comparison with Ikeda's method. Conclusions are given in section 5.  
+\\
+
+
+
+
+{\color{blue}
+Please put them in the reference list.
+
+Schmitke, R. T., 1978. “Ship sway, roll and yaw motions in oblique seas”.
+SNAME Transactions(86).
+
+
+S\"oder, C., Rosén, A., Werner, S., Huss, M. and Kuttenkeuler, J. (2012). Assessment of ship roll damping through full scale and model scale experiments and semi-empirical methods.
+
+S\öder, C., Rosén, A. and Hull, M. (2019). Ikeda revisited, Journal of marine science and technology, Vol.24, p.306-316. 
+
+Kawahara, Y., Maekawa, K. and Ikeda, Y. (2009). A simple prediction formula for roll damping of conventional cargo ships on the basis of Ikeda's method and its limitation. Contemporary Ideas on Ship stability and capsizing in waves, Fluid mechanics and its applications, Vol.96, p. 465-486.
+
+}

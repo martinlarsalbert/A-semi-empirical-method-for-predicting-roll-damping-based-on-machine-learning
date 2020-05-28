@@ -1,17 +1,7 @@
 \section{Conclusions}
 \label{se:conclusions}
-The following conclusions rely on the following assumptions:
-\begin{itemize}
-    \item The present implementation of Simplified Ikeda method is correct.
-    \item The present roll damping data is correct. 
-\end{itemize}
-The implementation 
+The roll damping database has been compared with predictions with the implementation of the Simplified Ikeda method. The database and the predictions show agreement for some cases but poor agreement for other cases, especially for small draft to beam ratios, typically for Ballast loading condition for many modern ships. It seems that exceeding the limits of the the Simplified Ikeda method will give poor results. These limits are unfortunately not so well defined in \cite{kawahara_simple_2011}. The comparison in the present paper suggest a lower limit of the draught to length ratio of $T/L_{pp}>0.034$.
 
-
-
-The roll damping database has been compared with predictions with the implementation of the Simplified Ikeda method. The database and the predictions show agreement for some cases (see figure \ref{fig:B_e_hat_good}) but poor agreement for other cases, especially for small draft to beam ratios, typically for Ballast loading condition for many modern ships. It seems that exceeding the limits of the the Simplified Ikeda method will give poor results. These limits are unfortunately not so well defined in \cite{kawahara_simple_2011}. The comparison in the present paper suggest a lower limit of the draught to length ratio of $T/L_{pp}>0.034$.
-
-
-A regression model has been developed which has much better predictions, than the Simplified method for the present roll damping data. 
-but still with quite much errors. It seems that more advanced methods, original Ikeda method with strip calculations, CFD or model testing, to predict roll damping is still a better option to get reliable predictions.  
+A regression model has been developed which has better accuracy than the Simplified method for the present roll damping data. The accuracy of the regression model has been investigated using extensive cross validation. The model should be able to predict the roll damping for ships with main dimensions similar to the once in this paper within the estimated accuracy.
+If higher accuracy is needed, more advanced methods can be used, such as the original Ikeda method with strip calculations, CFD or model testing, to get reliable roll damping predictions.
 
