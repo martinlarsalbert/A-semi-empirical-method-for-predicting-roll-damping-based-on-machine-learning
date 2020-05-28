@@ -1,4 +1,7 @@
-\documentclass{article}
+\documentclass[10pt]{article}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\newfontfamily{\headingfont}{Times New Roman}
 \usepackage[utf8]{inputenc}
 \usepackage{xcolor}
 \usepackage{authblk}
@@ -8,6 +11,20 @@
 \usepackage{natbib}
 \usepackage[T1]{fontenc}
 \usepackage{nomencl}
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\normalfont\fontsize{10}{10}\sffamily\bfseries}
+  {\thesection}
+  {1em}
+  {}
+\titleformat{\subsection}
+  {\normalfont\fontsize{10}{10}\sffamily\bfseries}
+  {\thesubsection}
+  {1em}
+  {}
+
+
 \makenomenclature
 \usepackage[style=authoryear-ibid,backend=biber]{biblatex}
 \addbibresource{references.bib}% Syntax for version >= 1.2
@@ -18,8 +35,6 @@
 \author[1,2]{Martin Alexandersson}
 \author[1]{Wengang Mao}
 \author[1]{Jonas W Ringsberg}
-\author[2]{Sofia Werner}
-\author[2]{Martin Kjellberg}
 \affil[1]{Dept. of Mechanics and Maritime Sciences, Chalmers University of Technology, 41296 Gothenburg, Sweden}
 \affil[2]{SSPA Sweden AB, 41296 Gothenburg, Sweden}
 \affil[ ]{\textit {maralex@chalmers.se}}
@@ -32,9 +47,9 @@
 
 \vspace*{-0.5in}
 \input{abstract}
-\newpage
-\tableofcontents
-\newpage
+%\newpage
+%\tableofcontents
+%\newpage
 
 \include{1_introduction/introduction}
 %\input{nomenclature}
