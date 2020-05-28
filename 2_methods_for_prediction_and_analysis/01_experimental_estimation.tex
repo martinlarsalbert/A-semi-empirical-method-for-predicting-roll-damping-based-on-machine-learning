@@ -5,15 +5,15 @@ To evaluate the performed tests, a modified version of the PIT approach is devel
 
 
 
-%Peter Piehl \cite{henry_peter_piehl_ship_nodate} shows an analytical solution %to the linear model in equation \ref{eq:roll_decay_equation_himeno_linear}, %where the natural frequency of the motion is obtained by:
+%Peter Piehl \parencite{henry_peter_piehl_ship_nodate} shows an analytical solution %to the linear model in equation \ref{eq:roll_decay_equation_himeno_linear}, %where the natural frequency of the motion is obtained by:
 %\input{equations/omega0_equation}
 %
-%The roll damping and the natural frequency can be made non dimensional using %the following expressions \cite{himeno_prediction_1981}: 
+%The roll damping and the natural frequency can be made non dimensional using %the following expressions \parencite{himeno_prediction_1981}: 
 %\input{equations/B44_hat_equation}
 %\input{equations/omega_hat_equation}
 %The ordinary differential equations for roll motion in equation \ref{eq:roll_decay_equation_cubic}, \ref{eq:roll_decay_equation_himeno_quadratic} and \ref{eq:roll_decay_equation_himeno_linear} are solved numerically using Explicit Runge-Kutta method of order 5(4). 
 
-%Figure \ref{fig:analytical} shows a comparison for the linear model between this kind of numerical solution and the exact analytical solution \cite{henry_peter_piehl_ship_nodate}. It seems that the numerical solution agrees well with the analytical. 
+%Figure \ref{fig:analytical} shows a comparison for the linear model between this kind of numerical solution and the exact analytical solution \parencite{henry_peter_piehl_ship_nodate}. It seems that the numerical solution agrees well with the analytical. 
 
 %\begin{figure}[h]
 %    \centering
@@ -36,7 +36,7 @@ The "Derivation approach" has the advantage of being very much faster than the "
 
 
 In the "Derivation approach" the first and second roll time derivatives are calculated numerically so that the parameters in the models are the only unknowns and the optimal parameters that gives the best fit can simply be determined using a least square fit.
-In the "Integration approach" the parameters are found by solving a nonlinear least-squares problem using the least-square method \cite{noauthor_scipyoptimizeleast_squares_nodate} and the Trust Region Reflective algorithm with smooth approximation of l1 (absolute value). This approach requires that ordinary differential equation is solved for many "guessed" sets of parameters till the solution converges.
+In the "Integration approach" the parameters are found by solving a nonlinear least-squares problem using the least-square method \parencite{noauthor_scipyoptimizeleast_squares_nodate} and the Trust Region Reflective algorithm with smooth approximation of l1 (absolute value). This approach requires that ordinary differential equation is solved for many "guessed" sets of parameters till the solution converges.
 
 \begin{figure}[H]
     \centering
