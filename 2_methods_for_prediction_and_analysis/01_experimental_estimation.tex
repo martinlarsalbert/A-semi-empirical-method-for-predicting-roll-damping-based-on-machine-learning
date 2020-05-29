@@ -1,20 +1,7 @@
 \subsection{Estimation of roll damping from roll decay tests}
 \label{se:experimental_estimation}
 In order to extract roll damping parameters from the roll decay tests, parameters in the cubic, quadratic or linear roll decay models should be identified. The roll angle is measured during the roll decay tests. The system identification is defined as finding the parameters that produce a simulated roll signal that best fits the roll decay test measurement. 
-To evaluate the performed tests, a modified version of the PIT approach is developed. This modified approach adds a time-dependent second-degree polynomial to the fitting. It later can be separated from the solution to account for low frequency disturbances. The roll equation that is used for the evaluation has a linear-quadratic damping dependence and a linear restoring term. A quadratic roll damping model can be linearized using the equivalent linear damping coefficient \parencite{himeno_prediction_1981}:
-
-\input{equations/B_e_equation}
-
-In order to obtain the damping coefficients $B_1$ and $B_2$, roll damping is calculated for two or more roll amplitudes $\phi_a$ for the same motion frequency (for this study, it is referred to the natural frequency $\omega_0$ because free roll decay tests were used for the model tests.). $B_1$ and $B_2$ is obtained by fitting equation \ref{eq:B_e_equation} to this data as shown in Fig.(\ref{fig:ikeda_B_1_B2}).  
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[height=5cm, width=8cm]{figures/ikeda_B_1_B_2.pdf}
-    \vspace{-0.5cm}
-    \caption{Variation of roll amplitude to derive $B_1$ and $B_2$}
-    \label{fig:ikeda_B_1_B2}
-\end{figure}
-
+To evaluate the performed tests, a modified version of the PIT approach is developed. This modified approach adds a time-dependent second-degree polynomial to the fitting. It later can be separated from the solution to account for low frequency disturbances. The roll equation that is used for the evaluation has a linear-quadratic damping dependence and a linear restoring term. 
 
 
 
