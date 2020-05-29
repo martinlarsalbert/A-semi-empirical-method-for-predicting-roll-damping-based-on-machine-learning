@@ -26,6 +26,12 @@
 
 
 \makenomenclature
+% This will add the units
+%----------------------------------------------
+\newcommand{\nomunit}[1]{%
+\renewcommand{\nomentryend}{\hspace*{\fill}#1}}
+%----------------------------------------------
+
 \usepackage[style=authoryear-ibid,backend=biber]{biblatex}
 \addbibresource{references.bib}% Syntax for version >= 1.2
 
