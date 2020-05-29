@@ -13,6 +13,16 @@
 \usepackage{nomencl}
 \usepackage{titlesec}
 
+\usepackage{mathptmx} % Size of equations:
+\DeclareMathSizes{9.8}{17}{7}{7}
+\DeclareMathSizes{10.0}{10}{6}{6}
+\DeclareMathSizes{10.95}{10}{7}{7}   % For size 10 text
+\DeclareMathSizes{11}{19}{13}{9}      % For size 11 text
+\DeclareMathSizes{12}{20}{14}{10}     % For size 12 text
+
+
+\usepackage[toc,page]{appendix}
+
 \titleformat{\section}
   {\normalfont\fontsize{10}{10}\sffamily\bfseries}
   {\thesection}
@@ -23,8 +33,7 @@
   {\thesubsection}
   {1em}
   {}
-
-
+  
 \makenomenclature
 % This will add the units
 %----------------------------------------------
@@ -62,16 +71,20 @@
 %\newpage
 
 \include{1_introduction/introduction}
-{\footnotesize
-\input{nomenclature}
-}
 
-\include{2_methods_for_prediction_and_analysis/methods_for_prediction_and_analysis}
-\include{3_database_of_roll_decay_tests/database_of_roll_decay_tests}
-\include{4_ML-method_for_prediction_of_roll_damping/4_ML-method_for_prediction_of_roll_damping}
-\include{5_result_conclusions/conclusions}
+\fbox{\begin{minipage}{40em}
+    {\footnotesize
+        \input{nomenclature}
+    }
+\end{minipage}}
+
+\input{2_methods_for_prediction_and_analysis/methods_for_prediction_and_analysis}
+\input{3_database_of_roll_decay_tests/database_of_roll_decay_tests}
+\input{4_ML-method_for_prediction_of_roll_damping/4_ML-method_for_prediction_of_roll_damping}
+\input{5_result_conclusions/conclusions}
 
 \input{acknowledgements}
-\include{references}
+\input{appendix/appendices}
+\input{references}
 
 \end{document}

@@ -21,32 +21,35 @@ Figure \ref{fig:B_e_hat_ikeda_zero} and \ref{fig:B_e_hat_ikeda} show a compariso
 from model tests and the simplified method. Where predicted damping with Simplified Ikeda has been plotted against corresponding test in the roll damping database.  
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\columnwidth]{figures/B_e_hat_ikeda_zero.pdf}
-    \caption{$\hat{B_e}$ comparison at zero speed}
-    \label{fig:B_e_hat_ikeda_zero}
+\centering
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.0\columnwidth]{figures/B_e_hat_ikeda_zero.pdf}
+  \caption{$\hat{B_e}$ comparison at zero speed}
+  \label{fig:B_e_hat_ikeda_zero}
+\end{minipage}%
+\begin{minipage}{.5\textwidth}
+  \centering
+  \includegraphics[width=1.0\columnwidth]{figures/B_e_hat_ikeda.pdf}
+  \caption{$\hat{B_e}$ comparison at all speeds}
+  \label{fig:B_e_hat_ikeda}
+\end{minipage}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\columnwidth]{figures/B_e_hat_ikeda.pdf}
-    \caption{$\hat{B_e}$ comparison at all speeds}
-    \label{fig:B_e_hat_ikeda}
-\end{figure}
 
 The comparison show poor agreement, both at speed and zero speed. It was discovered that the prediction error was highly depending on the ship draught $T$ which is shown in figure  \ref{fig:B_e_hat_error}.
 The figure shows that the error is much larger for $T/L_{pp}<0.034$. Also high frequencies ($\hat{\omega_0} > 0.6$) had higher errors.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\columnwidth]{figures/B_e_hat_error.pdf}
+    \includegraphics[width=0.9\columnwidth]{figures/B_e_hat_error.pdf}
     \caption{Simplified Ikeda error versus draught}
     \label{fig:B_e_hat_error}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\columnwidth]{figures/B_e_hat_good.pdf}
+    \includegraphics[width=0.9\columnwidth]{figures/B_e_hat_good.pdf}
     \caption{$\hat{B_e}$ comparison with $T/L_{pp}>0.034$}
     \label{fig:B_e_hat_good}
 \end{figure}
