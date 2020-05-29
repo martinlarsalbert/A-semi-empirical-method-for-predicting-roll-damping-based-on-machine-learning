@@ -1,11 +1,24 @@
 \subsection{Overall accuracy of Simplified Ikeda method}
 \label{se:overall_comparison}
-An investigation of how well the implementation of the Simplified Ikeda method (see section \ref{se:simplified_ikeda}) agree with the corresponding result in the roll damping database has been carried out.
+An investigation of how well the implementation of the Simplified Ikeda method (see section \ref{se:semi-empirical methods}) agree with the corresponding result in the roll damping database has been carried out. 
 
-Figure \ref{fig:B_e_hat_ikeda_zero} and \ref{fig:B_e_hat_ikeda} show a comparison of the non dimensional equivalent linear damping $\hat{B_e}$
+To enable a comparison the equivalent linear damping coefficient is used \parencite{himeno_prediction_1981}:
+\input{equations/B_e_equation}
+
+For the roll damping database $B_1$ and $B_2$ can be inserted directly into equation  \ref{eq:B_e_equation}. 
+In order to obtain the same coefficients for the simplified Ikeda's method, roll damping is calculated for two or more roll amplitudes $\phi_a$ for the same motion frequency (for this study, it is referred to the natural frequency $\omega_0$ because free roll decay tests were used for the model tests.). $B_1$ and $B_2$ is obtained by fitting equation \ref{eq:B_e_equation} to this data as shown in Fig.(\ref{fig:ikeda_B_1_B2}).  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[height=5cm, width=8cm]{figures/ikeda_B_1_B_2.pdf}
+    \vspace{-0.5cm}
+    \caption{Variation of roll amplitude to derive $B_1$ and $B_2$}
+    \label{fig:ikeda_B_1_B2}
+\end{figure}
+
+$\hat{B_e}$ is the non-dimensional $B_e$ \parencite{himeno_prediction_1981}.
+Figure \ref{fig:B_e_hat_ikeda_zero} and \ref{fig:B_e_hat_ikeda} show a comparison of $\hat{B_e}$ 
 from model tests and the simplified method. Where predicted damping with Simplified Ikeda has been plotted against corresponding test in the roll damping database.  
-
-The test setup in the free roll decay tests differs however from the forced roll motion model tests that Ikeda \parencite{ikeda_velocity_1979} used to derive the original method. This is not believed to have any large impact as long as roll damping near the natural frequency is considered. The Ikeda model tests were also conducted with smaller models (2 meters compared to 3-6 meters). But there is a skin friction component $B_F$ to the Ikeda method that should handle this scale effect.
 
 \begin{figure}[H]
     \centering
