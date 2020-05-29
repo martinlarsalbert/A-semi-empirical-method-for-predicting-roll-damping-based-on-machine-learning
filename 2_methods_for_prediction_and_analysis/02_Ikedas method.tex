@@ -2,7 +2,7 @@
 \subsection{Ikeda's method: from strip theory to semi-empirical formulas}
 \label{se:semi-empirical methods}
 Since the scale effect of the damping is mainly associated with the skin friction on ship hulls and the friction only contributes very little to a ship's total roll damping, the most reliable way to obtain a ship's roll damping coefficients is to carry out model scale experimental tests. 
-While in a ship's early design stage when only limited information is available and flexible to be adjusted, such as the ship's principal dimensions and the basic hull geometry, some semi-empirical methods were also proposed to predict the roll damping \parencite{himeno_prediction_1981}. The most recognize method was developed in a series of research articles \parencite{ikeda_roll_1978,ikeda_eddy_1978,ikeda_roll_1979,ikeda_components_1978,ikeda_velocity_1979}, and it is well-known to be named as Ikeda's method. This method divides the roll damping into five damping components, i.e., the friction component $B_F$, the eddy component $B_e$, the lift component $B_L$, the wave component $B_W$ and the bilge keel component $B_BK$, as in the following Eq.(\ref{eq:ikeda}), 
+While in a ship's early design stage when only limited information is available and flexible to be adjusted, such as the ship's principal dimensions and the basic hull geometry, some semi-empirical methods were also proposed to predict the roll damping \parencite{himeno_prediction_1981}. The most recognize method was developed in a series of research articles \parencite{ikeda_roll_1978,ikeda_eddy_1978,ikeda_roll_1979,ikeda_components_1978,ikeda_velocity_1979}, and it is well-known to be named as Ikeda's method. This method divides the roll damping into five damping components, i.e., the friction component $B_F$, the eddy component $B_e$, the lift component $B_L$, the wave component $B_W$ and the bilge keel component $B_{BK}$, as in the following Eq.(\ref{eq:ikeda}), 
 
 \begin{equation} \label{eq:ikeda}
 B = B_F + B_E + B_L + B_W + B_{BK}
@@ -14,7 +14,7 @@ A \emph{Simplified Ikeda's method} was proposed by \parencite{kawahara_simple_20
 
 \input{equations/simplified_ikeda_equation}
 
-where $A_{0}$, $OG$, $BK_{L}$ and $BK_{B}$ represent a ship's wetted surface area, vertical distance from the origin to a ship's center of gravity, length and width of bilge keel, respectively. The detailed formulas within $f$ can be referred to \parencite{himeno_prediction_1981}.
+where $A_{0}$, $OG$, $BK_{L}$ and $BK_{B}$ represent a ship's wetted surface area, vertical distance from the origin to a ship's center of gravity, length and width of bilge keel, respectively. The detailed formulas within $f$ can be referred to \parencite{kawahara_simple_2011} and the actual implementation \parencite{alexandersson_martinlarsalbertrolldecay-estimators_2020}.
 
 %The Simplified Ikeda method \cite{kawahara_simple_2011} has been implemented \cite{alexandersson_martinlarsalbertrolldecay-estimators_2020} with the intention to be used both as a benchmark and maybe also as a sub-component of a new method. The examples from \cite{kawahara_simple_2011} was recalculated to check that the method has been implemented correctly. The authors have been unable to find other ways to validate the implementation, which introduces some uncertainty to the comparisons. The method has been implemented as a function where the total roll damping and its component is calcultated: 
 
@@ -27,14 +27,6 @@ The wave damping also changes at speed. Ikeda \parencite{ikeda_components_1978} 
 \frac{B_W}{B_{W0}} = f(L, B, .....). 
 \end{equation}
 }}
-
-
-%\begin{figure}[h]
-%    \centering
-%    \includegraphics[width=\columnwidth]{figures/ikeda_faust.pdf}
-%    \caption{Roll damping components calculated with Ikeda method for PCTC Faust}
-%    \label{fig:ikeda_faust}
-%\end{figure}
 
 
 A parameter variation was conducted in order to study the simplified method.
