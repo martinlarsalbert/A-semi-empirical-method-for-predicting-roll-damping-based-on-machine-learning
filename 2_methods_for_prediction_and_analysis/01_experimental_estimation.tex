@@ -1,7 +1,7 @@
 \subsection{Estimation of roll damping from roll decay tests}
 \label{se:experimental_estimation}
 The roll decay test has the benefit that both roll damping and the natural frequency $\omega_0$ can be observed, but the drawback that roll damping at only this one frequency can be obtained. In order to extract roll damping parameters from the roll decay tests, parameters in the cubic, quadratic or linear roll decay models should be identified. The roll angle is measured during the roll decay tests. The system identification is defined as finding the parameters that produce a simulated roll signal that best fits the roll decay test measurement. 
-To evaluate the performed tests, a modified version of the PIT approach is developed. This modified approach adds a time-dependent second-degree polynomial to the fitting. It later can be separated from the solution to account for low frequency disturbances. The roll equation that is used for the evaluation has a linear-quadratic damping dependence and a linear restoring term. 
+To evaluate the performed tests, a modified version of the PIT approach is developed. 
 
 
 
@@ -38,14 +38,8 @@ The "Derivation approach" has the advantage of being very much faster than the "
 In the "Derivation approach" the first and second roll time derivatives are calculated numerically so that the parameters in the models are the only unknowns and the optimal parameters that gives the best fit can simply be determined using a least square fit.
 In the "Integration approach" the parameters are found by solving a nonlinear least-squares problem using the least-square method \parencite{noauthor_scipyoptimizeleast_squares_nodate} and the Trust Region Reflective algorithm with smooth approximation of l1 (absolute value). This approach requires that ordinary differential equation is solved for many "guessed" sets of parameters till the solution converges.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=12cm, height = 6cm ]{figures/roll_decay_model_compare.eps}
-    \caption{Roll decay test comparison of linear, quadratic and cubic model}
-    \label{fig:roll_decay_model_compare}
-\end{figure}
+A validation of the developed parameter identification method has been conducted by checking that parameters from simulated signals with the linear, quadratic and cubic model  (where the parameters are already known) can be identified correctly. 
 
-A validation of the developed system identification method has been conducted by checking that known parameters from signals from simulations with the linear, quadratic and cubic models can all be identified. For example,
-Figure \ref{fig:roll_decay_model_compare} shows a comparison between the linear, quadratic and cubic model for a random chosen roll decay test motion results. It can be seen that the linear model can not give a perfect representation for the whole range of roll angles.    
+    
 
 

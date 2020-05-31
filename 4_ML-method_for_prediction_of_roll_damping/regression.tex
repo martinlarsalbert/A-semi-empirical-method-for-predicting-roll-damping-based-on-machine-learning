@@ -16,9 +16,7 @@ The number of parameters was also kept to a minimum so that a set of fewer featu
 
 The total regression model, consisting of the two sub models, was evaluated using cross validation. 100 random train/test sets were fitted and tested giving an average score: $mean(R^2)=0.66$, with standard deviation $std(R^2)=0.12$.
 
-Figure \ref{fig:B_e_hat0_regression} and \ref{fig:B_e_factor_regression} shows comparisons between the regressions and the corresponding model test data. It can be noted that the speed factor can be up to 3.5 so that the roll damping at speed is 3.5 times larger than the corresponding roll damping at zero speed. A comparison for the total regression model (equation \ref{eq:regression_factor_equation}) is shown in figure \ref{fig:B_e_factor_regression_total}.
-
- The regressed sub models are shown in equation \ref{eq:polynom_zero} and \ref{eq:polynom_speed}. The non-dimensional damping due to hull lift $B_{LHAT}$, from the Ikeda method, is one of the parameters in the speed dependency equation \ref{eq:polynom_speed}.
+Figure \ref{fig:B_e_hat0_regression} and \ref{fig:B_e_factor_regression} shows comparisons between the regressions and the corresponding model test data. It can be noted that the speed factor can be up to 3.5 so that the roll damping at speed is 3.5 times larger than the corresponding roll damping at zero speed. The regressed sub models are shown in equation \ref{eq:polynom_zero} and \ref{eq:polynom_speed}. The non-dimensional damping due to hull lift $B_{LHAT}$, from the Ikeda method, is one of the parameters in the speed dependency equation \ref{eq:polynom_speed}. A comparison for the total regression model (equation \ref{eq:regression_factor_equation}) is shown in figure \ref{fig:B_e_factor_regression_total}.
 
 \input{equations/polynom_zero}
 \input{equations/polynom_speed}
