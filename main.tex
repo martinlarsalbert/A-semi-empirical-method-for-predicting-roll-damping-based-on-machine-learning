@@ -22,8 +22,6 @@
 
 
 \usepackage[toc,page]{appendix}
-%\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
-\usepackage[style=chicago-authordate,backend=biber]{biblatex}
 
 \titleformat{\section}
   {\normalfont\fontsize{10}{10}\sffamily\bfseries}
@@ -43,7 +41,11 @@
 \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
 %----------------------------------------------
 
-\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\usepackage[style=authoryear-ibid,backend=biber, maxnames=2]{biblatex}
+%\usepackage[style=apa,backend=biber,maxnames=2]{biblatex}
+%\usepackage[style=chicago-authordate,backend=biber]{biblatex}
+
+
 \addbibresource{references.bib}% Syntax for version >= 1.2
 
 \title{ A semi-empirical method for predicting roll damping based on machine learning }
