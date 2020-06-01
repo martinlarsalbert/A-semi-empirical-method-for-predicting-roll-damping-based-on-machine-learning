@@ -1,10 +1,10 @@
-A new semi empirical method to predict roll damping has been developed as an alternative or complement to the simplified Ikeda's method. The method should predict roll damping as a simple mathematical expression based on main particulars and not require a hull geometry definition. 
+A new semi empirical method to predict roll damping has been developed as an alternative or complement to the simplified Ikeda's method. The method  predicts roll damping as a simple mathematical expression based on main particulars and does not require a hull geometry definition. 
 The new method is based on regression of the present roll damping database with some additional components of Ikeda's method. Since the underlying data is collected from roll decay tests, the methods predicts the roll damping at the natural frequency $\omega_0$.  
 The regression was conducted on the roll damping database for tests at even keel. 
 
-When looking at the roll damping database it was found that the roll damping at zero speed is much lower than the roll damping at speed. The hydrodynamics at zero speed and at speed is very much different \parencite{ikeda_velocity_1979}. Because of this the regression has been divided as a product of two sub models:
+The roll damping database reveals that the roll damping at zero speed is much lower than the roll damping at speed. The hydrodynamics at zero speed and at speed is very  different \parencite{ikeda_velocity_1979}. These two situations need to be separated so that  the regression is formulated  as a product of two sub models:
 \input{equations/regression_factor_equation}
-Where $B_{ehat0}$ is a zero speed regression and $B_{efactor}$ is a speed depending regression. A similar approach was used in \parencite{henry_peter_piehl_ship_2016}. Linear regression has been used for the two sub models. 
+Where $B_{ehat0}$ is a zero speed regression and $B_{efactor}$ is a speed depending regression. A similar approach was used in \parencite{henry_peter_piehl_ship_2016}. Linear regression is  used for the two sub models. 
 
 \subsection{Cross validation}
 When constructing a regression model from a data set, over-fitting the data can be a problem. Including too many parameters and/or allowing too high order of the model would give a very good representation of the present roll damping data, but large extrapolation errors when the model is used on other data. Cross validation has been used to "mimic" this situation, where the model should make predictions on "new data", for ships that have not been part of the regression (the training of the model). The model that can make the best prediction on "new data" is considered as the best. The best model has been developed by optimizing the selection of parameters (the features). The regression model was allowed to have features selected from a "gross list" of all available meta data. The linear regression should determine coefficients in a mathematical expression represented as a polynomial up to second order and including coupling terms. The model with a selection of terms that gives the highest score in the cross validation is considered as the best.    
@@ -14,7 +14,7 @@ For the cross validation the data was divided into a  training set (80\%) and a 
 The "gross list" of available features has been chosen as a balance between guessed relevance and to minimize the number of tests that need to be excluded due to missing meta data. 
 The number of parameters was also kept to a minimum so that a set of fewer features was selected prior to one with more features if they had similar scoring. As it turned out the developed regression models (equation \ref{eq:polynom_zero} and \ref{eq:polynom_speed}) have no coupling terms or quadratic terms.
 
-The total regression model, consisting of the two sub models, was evaluated using cross validation. 100 random train/test sets were fitted and tested giving an average score: $mean(R^2)=0.66$, with standard deviation $std(R^2)=0.12$.
+The total regression model, consisting of the two sub models, was evaluated using cross validation. 100 random train/test sets were fitted and tested giving an average score: $mean(R^2)=0.68$, with standard deviation $std(R^2)=0.12$.
 
 Figure \ref{fig:B_e_hat0_regression} and \ref{fig:B_e_factor_regression} shows comparisons between the regressions and the corresponding model test data. It can be noted that the speed factor can be up to 3.5 so that the roll damping at speed is 3.5 times larger than the corresponding roll damping at zero speed. The regressed sub models are shown in equation \ref{eq:polynom_zero} and \ref{eq:polynom_speed}. The non-dimensional damping due to hull lift $B_{LHAT}$, from the Ikeda method, is one of the parameters in the speed dependency equation \ref{eq:polynom_speed}. A comparison for the total regression model (equation \ref{eq:regression_factor_equation}) is shown in figure \ref{fig:B_e_factor_regression_total}.
 
@@ -45,4 +45,6 @@ Figure \ref{fig:B_e_hat0_regression} and \ref{fig:B_e_factor_regression} shows c
     \caption{Total regression}
     \label{fig:B_e_factor_regression_total}
 \end{figure}
+
+ADD A FIGURE WITH ERROR, AS YOU HAD FOR IKEDA? WITH t ON X-AXIS, TO BE COMPARED WITH FIGURE 6
 
