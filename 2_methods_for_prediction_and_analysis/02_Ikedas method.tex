@@ -12,7 +12,8 @@ where the wave and eddy components require strip theory based hydrodynamic analy
 A simplified Ikeda's method was proposed by \parencite{kawahara_simple_2011} and is instead used in this study to calculate all the damping components including the eddy component $B_E$ and wave component $B_W$. The semi-empirical formulas describe four of the five roll damping components at motion frequency $\omega$ for a given roll amplitude $\phi_a$ at zero ship speed. A speed dependency was introduced by adding a fifth damping term $B_L$ and a speed correction to $B_W$ as described in \parencite{ikeda_velocity_1979} giving a function: 
 
 \input{equations/simplified_ikeda_equation}
-\parencite{kawahara_simple_2011} also prescribe the following limits to this method:
+
+The detailed formulas within $f$ can be referred to\parencite{ikeda_velocity_1979, kawahara_simple_2011}. It should be noted that this method may be only efficiently used to estimate the roll damping of ships with the following boundaries \parencite{kawahara_simple_2011}:
 \begin{equation}
     \label{eq:SI_limits}
     \begin{align}
@@ -26,7 +27,10 @@ A simplified Ikeda's method was proposed by \parencite{kawahara_simple_2011} and
     \end{align}
 \end{equation}
 
-The detailed formulas within $f$ can be referred to \parencite{kawahara_simple_2011}, \parencite{ikeda_velocity_1979} and the actual implementation \parencite{alexandersson_martinlarsalbertrolldecay-estimators_2020}.
+where \nomenclature{$\displaystyle B_{L}$}{Hull lift roll damping\nomunit{$Nm/(rad/s)$}}.
+
+
+%and the actual implementation \parencite{alexandersson_martinlarsalbertrolldecay-estimators_2020}.
 
 %The Simplified Ikeda method \cite{kawahara_simple_2011} has been implemented \cite{alexandersson_martinlarsalbertrolldecay-estimators_2020} with the intention to be used both as a benchmark and maybe also as a sub-component of a new method. The examples from \cite{kawahara_simple_2011} was recalculated to check that the method has been implemented correctly. The authors have been unable to find other ways to validate the implementation, which introduces some uncertainty to the comparisons. The method has been implemented as a function where the total roll damping and its component is calcultated: 
 

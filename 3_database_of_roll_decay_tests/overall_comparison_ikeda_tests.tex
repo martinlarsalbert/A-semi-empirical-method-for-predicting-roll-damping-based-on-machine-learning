@@ -6,25 +6,15 @@ To enable a comparison the equivalent linear damping coefficient is used \parenc
 \input{equations/B_e_equation}
 
 For the roll damping database $B_1$ and $B_2$ can be inserted directly into equation  \ref{eq:B_e_equation}. 
-In order to obtain the same coefficients for the simplified Ikeda's method, roll damping is calculated for two or more roll amplitudes $\phi_a$ for the same motion frequency (for this study, it is referred to the natural frequency $\omega_0$ because free roll decay tests were used for the model tests.). $B_1$ and $B_2$ is obtained by fitting equation \ref{eq:B_e_equation} to this data.  
-
-$\hat{B_e}$ is the non-dimensional equivalent linear damping coefficient \parencite{himeno_prediction_1981}.
-Figure \ref{fig:B_e_hat_ikeda_zero} and \ref{fig:B_e_hat_ikeda} show a comparison of $\hat{B_e}$ from model tests and the simplified method where predicted damping with simplified Ikeda's method has been plotted against corresponding test in the roll damping database.  
+In order to obtain the same coefficients for the simplified Ikeda's method, roll damping is calculated for two or more roll amplitudes $\phi_a$ for the same motion frequency (for this study, it is referred to the natural frequency $\omega_0$ because free roll decay tests were used for the model tests.). $B_1$ and $B_2$ is obtained by fitting equation \ref{eq:B_e_equation} to this data. $\hat{B_e}$ is the non-dimensional equivalent linear damping coefficient \parencite{himeno_prediction_1981}.
+It was found that almost all ships in the roll damping database were outside the limits of the method (see equation \ref{eq:SI_limits}). 
 
 \begin{figure}[H]
 \centering
-\begin{minipage}{.5\textwidth}
   \centering
-  \includegraphics[width=1.0\columnwidth]{figures/B_e_hat_ikeda_zero.eps}
-  \caption{$\hat{B_e}$ comparison at zero speed}
-  \label{fig:B_e_hat_ikeda_zero}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-  \centering
-  \includegraphics[width=1.0\columnwidth]{figures/B_e_hat_ikeda.eps}
+  \includegraphics[width=1.0\columnwidth]{figures/ikeda_limited.eps}
   \caption{$\hat{B_e}$ comparison at all speeds}
-  \label{fig:B_e_hat_ikeda}
-\end{minipage}
+  \label{fig:ikeda_limited}
 \end{figure}
 
 
