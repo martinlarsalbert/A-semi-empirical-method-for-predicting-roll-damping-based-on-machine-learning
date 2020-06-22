@@ -1,13 +1,17 @@
 \subsection{Overall accuracy of Simplified Ikeda method}
 \label{se:overall_comparison}
-An investigation of how well the implementation of the Simplified Ikeda method (see section \ref{se:semi-empirical methods}) agree with the corresponding result in the roll damping database has been carried out. 
+An investigation of how well the implementation of the simplified Ikeda's method (see section \ref{se:semi-empirical methods}) agree with the corresponding result in the roll damping database has been carried out. 
 
-To enable a comparison the equivalent linear damping coefficient is used \parencite{himeno_prediction_1981}:
+Comparing roll damping is a bit difficult since the roll damping model consist of two coefficients, a linear term $B_1$ and a quadratic term $B_2$. These coefficients can be combined by calculating the equivalent linear damping coefficient for a certain roll angle $\phi_a$ \parencite{himeno_prediction_1981}:
 \input{equations/B_e_equation}
 
+$\phi_a$ was initially taken as the maximum roll angle from the roll decay tests. It was however found that a smaller value of 2 degrees gave better agreement and was instead used.
+
 For the roll damping database $B_1$ and $B_2$ can be inserted directly into equation  \ref{eq:B_e_equation}. 
-In order to obtain the same coefficients for the simplified Ikeda's method, roll damping is calculated for two or more roll amplitudes $\phi_a$ for the same motion frequency (for this study, it is referred to the natural frequency $\omega_0$ because free roll decay tests were used for the model tests.). $B_1$ and $B_2$ is obtained by fitting equation \ref{eq:B_e_equation} to this data. $\hat{B_e}$ is the non-dimensional equivalent linear damping coefficient \parencite{himeno_prediction_1981}.
-It was found that almost all ships in the roll damping database were outside the limits of the method (see equation \ref{eq:SI_limits}). 
+In order to obtain the same coefficients for the simplified Ikeda's method, roll damping was calculated for two or more roll amplitudes $\phi_a$ for the same motion frequency. $B_1$ and $B_2$ are obtained by fitting equation \ref{eq:B_e_equation} to this data. The $B_e$ coefficient was made non-dimensional according to \parencite{himeno_prediction_1981} giving the non-dimensional equivalent linear damping coefficient $\hat{B_e}$, which was more convenient to use for this comparison. 
+
+It was found that almost all ships in the roll damping database were outside the limits in equation \ref{eq:SI_limits}). Two different ways to handle this limit exceedance was investigated: one "unlimited" approach where the input values where allowed to exceed the limits and one "limited" approach where the limit boundary values were used for exceeding values. Figure \ref{fig:ikeda_limited} show predictions with the Simplified Ikeda's method using the "unlimited" and "limited" approach compare to the corresponding results from model tests. The "limited" approach seems to be the best one to use according to this figure, where the "unlimited" approach has values very far away from the red reference line.   
+
 
 \begin{figure}[H]
 \centering
@@ -18,25 +22,7 @@ It was found that almost all ships in the roll damping database were outside the
 \end{figure}
 
 
-The comparison show poor agreement, both at speed and zero speed. The prediction error is highly dependent on the ship draught $T$, which is shown in figure  \ref{fig:B_e_hat_error}.
-The figure shows that the error is much larger for $T/L_{pp}<0.034$. Also high frequencies ($\hat{\omega_0} > 0.6$) give larger errors.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\columnwidth]{figures/B_e_hat_error.eps}
-    \caption{Simplified Ikeda error versus draught}
-    \label{fig:B_e_hat_error}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\columnwidth]{figures/B_e_hat_good.eps}
-    \caption{$\hat{B_e}$ comparison with $T/L_{pp}>0.034$}
-    \label{fig:B_e_hat_good}
-\end{figure}
-
-Figure \ref{fig:B_e_hat_good} shows the comparison for  model tests with $T/L_{pp}>0.034$ and $\hat{\omega_0} < 0.6$.
-This confirms the small draft to beam ratio limit of this method as mentioned in \parencite{kawahara_simple_2011}. The corresponding $R^2$ score is 0.38.
 
 \textcolor{red}{\subsection{Improved S1 in literature?}}
+The eddy damping $ B_E $ becomes negative when $ C_b>0.84 $ according to \parencite[]{rudakovic_application_2017}.
 
