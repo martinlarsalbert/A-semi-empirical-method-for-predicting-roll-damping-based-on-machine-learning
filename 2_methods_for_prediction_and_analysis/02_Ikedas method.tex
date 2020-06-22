@@ -16,18 +16,22 @@ A simplified Ikeda's method was proposed by \parencite{kawahara_simple_2011} and
 The detailed formulas within $f$ can be referred to\parencite{ikeda_velocity_1979, kawahara_simple_2011}. It should be noted that this method may be only efficiently used to estimate the roll damping of ships with the following boundaries \parencite{kawahara_simple_2011}:
 \begin{equation}
     \label{eq:SI_limits}
-    \begin{align}
-    0.5 \leq C_b \leq 0.85, 
-    2.5\leq beam/T \leq 4.5,
-    -1.5 \leq OG/T \leq 0.2, 
-    0.9 \leq A_0 \leq 0.99, \\ 
-    0.01 \leq BK_B/beam \leq 0.06,
-    0.05 \leq NK_L/L_{PP} \leq 0.4,
-    0 \leq \hat{\omega} \leq 1.0
-    \end{align}
+     \left\{
+     \begin{array}{ll}
+    0.5 \leq C_b \leq 0.85,\hspace{0.5cm} 
+    0 \leq \omega \leq 1.0,
+    \hspace{0.5cm}
+    0.9 \leq A_0 \leq 0.99,\\
+    2.5\leq Beam/T \leq 4.5, \hspace{1cm}
+    0.01 \leq BK_B/Beam \leq 0.06, \\
+        -1.5 \leq OG/T \leq 0.2,
+     \hspace{1cm}
+    0.05 \leq BK_L/L_{PP} \leq 0.4.
+    \end{array}
+    \right.
 \end{equation}
 
-where \nomenclature{$\displaystyle B_{L}$}{Hull lift roll damping\nomunit{$Nm/(rad/s)$}}.
+where $C_b$, $\omega$, $A_0$ represent a ship's block coefficient, angular frequency of roll motion, Middle ship area;  $Beam$, $T$, $L_{pp}$, $OG$, $BK_B$, $BK_L$ represent a ship's beam, mean draft, length between perpendiculars, distance from roll axis to still water level, bilge keel height and bilge keel length, respectively.
 
 
 %and the actual implementation \parencite{alexandersson_martinlarsalbertrolldecay-estimators_2020}.
