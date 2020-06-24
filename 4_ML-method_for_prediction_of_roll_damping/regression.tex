@@ -1,3 +1,28 @@
+Work has been conducted to propose a correction to the SI-method based on the findings in this project. The idea is to find correction factors: $C_1-C_5$ to the roll damping components calculated with the SI-method so that the total roll damping can be calculated as: 
+\begin{equation} \label{eq:simplified_ikeda_equation}
+B=C_1\cdot B_{F} + C_2 \cdot B_{W} + C_3 \cdot B_{E} + C_4 \cdot B_{BK} + C_5 \cdot B_{L} 
+\label{eq:regression_model}
+\end{equation}
+
+In order to handle the problem of $\hat{B_e}$ accuracy being very much depending on the roll amplitude a roll amplitude factor is also added to the model:
+\begin{equation} \label{eq:simplified_ikeda_equation}
+B=C_1\cdot B_{F} + C_2 \cdot B_{W} + C_3 \cdot B_{E} + C_4 \cdot B_{BK} + C_5 \cdot B_{L} + C_6\cdot \phi_a 
+\label{eq:regression_model_phi_a}
+\end{equation}
+
+\begin{figure}[H]
+\vspace{-0.5cm}
+\centering
+  \centering
+  \includegraphics[height=6cm, width = 14cm]{figures/ikeda_corrected_phi_a.eps}
+  \vspace{-0.5cm}
+  \caption{Influence of roll amplitude $\phi_a$ on $\hat{B_e}$}
+  \label{fig:ikeda_phi_a}
+\end{figure}
+
+
+
+
 A new semi empirical method to predict roll damping has been developed as an alternative or complement to the simplified Ikeda's method. The method  predicts roll damping as a simple mathematical expression based on main particulars and does not require a hull geometry definition. 
 The new method is based on regression of the present roll damping database with some additional components of Ikeda's method. Since the underlying data is collected from roll decay tests, the methods predicts the roll damping at the natural frequency $\omega_0$.  
 The regression was conducted on the roll damping database for tests at even keel. 
