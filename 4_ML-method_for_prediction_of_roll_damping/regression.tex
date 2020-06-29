@@ -8,11 +8,9 @@ The accuracy of the SI-method is significantly improved by applying these correc
   \centering
   \includegraphics[]{figures/ikeda_corrected_phi_a.eps}
   \vspace{-0.5cm}
-  \caption{Influence of roll amplitude $\phi_a$ on $\hat{B_e}$}
+  \caption{Root mean square error of roll damping prediction between the SI-method, corrected SI-method and the model test results (upper plot). Influence of roll amplitude $\phi_a$ on $\hat{B_e}$ between the corrected SI-method and model tests for $0^{\circ}$ (bottom left plot), $5^{\circ}$ (bottom middle plot) and $10^{\circ}$ (bottom right plot), respectively.}
   \label{fig:ikeda_phi_a_correction}
 \end{figure}
 
 \subsection{Cross validation}
-\textcolor{red}{Cross validation 0-10 degrees roll amplitude...}
-
-When constructing a regression model from a data set, over-fitting the data can be a problem. Including too many parameters and/or allowing too high order of the model would give a very good representation of the present roll damping data, but large extrapolation errors when the model is used on other data. Cross validation has been used to "mimic" this situation, where the model should make predictions on "new data", for ships that have not been part of the regression (the training of the model). The model that can make the best prediction on "new data" is considered as the best. The best model has been developed by optimizing the selection of parameters (the features). The regression model was allowed to have features selected from a "gross list" of all available meta data. The linear regression should determine coefficients in a mathematical expression represented as a polynomial up to second order and including coupling terms. The model with a selection of terms that gives the highest score in the cross validation is considered as the best.    
+When constructing a regression model from a data set, over-fitting the data can be a problem. Including too many parameters and/or allowing too high order of the model would give a very good representation of the present roll damping data, but large extrapolation errors when the model is used on other data. K-fold cross validation has been used to "mimic" this situation. The data has been split into five smaller sets (folds). Four of the folds are used to train the model and the fifth is used for testing (validation). The validation is done by calculating the coefficient of determination $R^2$ for the fitted model. This is done for all five possible train/test combinations.      
