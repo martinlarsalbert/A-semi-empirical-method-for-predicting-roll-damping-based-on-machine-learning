@@ -1,9 +1,10 @@
 \subsection{Cross validation}
 \label{se:cross_validation}
 When constructing a regression model from a data set, over-fitting the data can be a problem. Including too many parameters and/or allowing too high order of the model would give a very good representation of the present roll damping data, but large extrapolation errors when the model is used on other data. K-fold cross validation has been used to "mimic" this situation. The data has been split into five smaller sets (folds). Four of the folds are used to train the model and the fifth is used for testing (validation). The validation is done by calculating the coefficient of determination $R^2$ for the fitted model. This is done for all five possible train/test combinations. 
-The folds are constructed in a random way with the restriction that all data for a particular ship should be in the same fold. Five folds are generated 20 times randomly, giving 100 $R^2$ values from the train-test-procedure for each model. The mean values and standard deviation of these 100 $R^2$ values are shown in table \ref{tab:crossvalidation}.
+The folds are constructed in a random way with the restriction that all data for a particular ship should be in the same fold. Five folds are generated 20 times randomly, giving 100 $R^2$ values from the train-test-procedure for each model. The mean values and standard deviation of these 100 $R^2$ values are shown in table \ref{tab:crossvalidation}. The $R^2$ for the SI-method in this table was calculated directly, instead of using cross validation, since it does not rely on the SSPA data, and consequently has no standard deviation attached to it.
 
 \input{equations/cross_validation}
+
 
 %\begin{figure}[H]
 %\vspace{-0.5cm}
