@@ -1,2 +1,20 @@
-\section{Regression}
+\section{Correction of Ikeda's method based on SSPA database}
+\label{se:correction_SI_method}
+In order to improve the accuracy of the roll damping prediction, the SSPA database containing more than 250 modern ships are used to propose correction models. In the following preliminary investigation, two different approaches are used to build such a model for roll damping prediction. The cross validation is also carried out to ensure the effectiveness of the proposed model for roll damping prediction.
+
+\subsection{New regression model for roll damping}
+First, let assume a ship's roll damping is a function of her main dimensions such that
+\textbf{\color{blue} Please put your previous description of the old model in this section.}
+
+\begin{equation} \label{eq:regression_model}
+    \hat{B}_e = f(Lpp, Beam, OA, D, BL, BW, ...).
+\end{equation}
+
+Some statistical learning method is used to 1) establish the regression model, and 2) estimate the parameters in the mdoel. 
+
+\subsection{Correction based on Ikeda's method}
+Work has been conducted to propose a correction to the SI-method based on the findings in this paper. The idea is to find correction factors that can be applied to the roll damping components calculated with the SI-method. In order to handle the problem of $\hat{B_e}$ accuracy being very much depending on the roll amplitude a roll amplitude correction factor has also added. The correction factors have been determined by fitting a linear regression model to the roll damping components, calculated with the SI-method at roll amplitudes between 0 and 10 degrees, giving the following expression: 
+\input{equations/polynom_correction}
+The proposed correction factors reduce $\hat{B_{BK}}$ and $\hat{B_{W}}$, removes $\hat{B_{E}}$ and $\hat{B_{L}}$ is not corrected much.
+
 \input{4_ML-method_for_prediction_of_roll_damping/regression}
