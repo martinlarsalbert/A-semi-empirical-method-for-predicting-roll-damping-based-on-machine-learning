@@ -5,10 +5,10 @@ In order to improve the accuracy of the roll damping prediction, the SSPA databa
 \subsection{New regression model for roll damping}
 First, let's assume a ship's roll damping is a function of her main dimensions with the same input parameters as the SI-method (see equation \ref{eq:S1-method}). 
 
-
 Some statistical learning method is used to establish the regression model, 
-
 estimate the parameters in the mdoel. 
+
+\input{equations/polynom_complex}
 
 \subsection{Correction based on Ikeda's method}
 Work has been conducted to propose a correction to the SI-method based on the findings in this paper. The idea is to find correction factors that can be applied to the roll damping components calculated with the SI-method. In order to handle the problem of $\hat{B_e}$ accuracy being very much depending on the roll amplitude a roll amplitude correction factor has also added. The correction factors have been determined by fitting a linear regression model to the roll damping components, calculated with the SI-method at roll amplitudes between 0 and 10 degrees, giving the following expression: 
