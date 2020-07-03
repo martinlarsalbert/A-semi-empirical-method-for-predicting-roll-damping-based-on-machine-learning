@@ -1,11 +1,18 @@
-\begin{tabular}{lrr}
+
+egin{table}[H]
+    \centering
+    \caption{Statistics from cross validations with all models}
+   \begin{tabular}{lrr}
 \toprule
-{} &  \$R\textasciicircum 2(SI-method)\$ &  \$R\textasciicircum 2(SI-corrected)\$ \\
+{} &  \$mean(R\textasciicircum 2)\$ &  \$std(R\textasciicircum 2)\$ \\
+model            &              &             \\
 \midrule
-0 &              0.39 &                 0.66 \\
-1 &              0.56 &                 0.71 \\
-2 &              0.47 &                 0.66 \\
-3 &              0.32 &                 0.69 \\
-4 &              0.59 &                 0.66 \\
+Simplified Ikeda &         0.23 &             \\
+SI-corrected     &         0.59 &        0.16 \\
+Polynomial       &         0.77 &        0.10 \\
 \bottomrule
 \end{tabular}
+
+    \label{tab:crossvalidation}
+\end{table}
+    
