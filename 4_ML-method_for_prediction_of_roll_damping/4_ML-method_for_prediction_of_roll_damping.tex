@@ -1,18 +1,23 @@
 \section{Regression method based on SSPA database}
 \label{se:correction_SI_method}
-In order to improve the accuracy of the roll damping prediction, the SSPA database containing more than 250 roll decay tests with modern ships are used to propose correction models. In the following preliminary investigation, two different approaches are used to build such a model for roll damping prediction. The cross validation is also carried out to ensure the effectiveness of the proposed model for roll damping prediction.
+In order to improve the accuracy of the roll damping prediction, the SSPA database containing more than 250 roll decay tests with modern ships is used to propose new models. In the following preliminary investigation, two different approaches are used to build such a model for roll damping prediction. The model is assumed to be a function of the same input parameters as the SI-method (see equation \ref{eq:S1-method}). It was found in section \label{se:overall_comparison} that the $B_e$ coefficient changes a lot with the roll amplitude $\phi_a$. Three different options to approach this were considered:
+\begin{itemize}
+    \item Calculate $B_e$ for only one representative value of $\phi_a$
+    \item Split into two regressions, one for $B_1$ and one for $B_2$.
+    \item Calculate $B_e$ for a range of $\phi_a$ and include all in the regression
+\end{itemize}
+The first option was rejected because that would generate a model that works for one roll amplitude only, the second option was rejected because introducing two regression models was considered unnecessary complex. And it was also suspected that there could be correlations between $B_1$ and $B_2$ so that the two regressions needed to be connected in some way. So the third option was used which means that the $B_e$ used in the regression contains roll amplitudes between 0 and 10 degrees.  
 
 \subsection{New regression model for roll damping}
-First, let's assume a ship's roll damping is a function of her main dimensions with the same input parameters as the SI-method (see equation \ref{eq:S1-method}). The function is further assumed to be expressed as a second order polynomial. Some statistical learning method is used to establish the regression model  The input parameters (the features) are first transformed into polynomial features including all possible coupling terms between the features. The best polynomial features are selected using a feature selection algorithm.
-
-and to estimate the parameters in this model.
+The first approach further assume that the function can be expressed as a second order polynomial. Some statistical learning method is used to establish the regression model. The input parameters (the features) are first transformed into polynomial features including all possible coupling terms. The best polynomial features are selected using a feature selection algorithm, selecting the k best features \parencite[]{noauthor_sklearnfeature_selectionselectkbest_nodate} using a linear model for testing the individual effect of each of many regressors \parencite[]{noauthor_sklearnfeature_selectionf_regression_nodate}. Cross validation, as described in section \ref{se:cross_validation} below, is used to estimate the accuracy. The accuracy of using only the one best polynomial feature, only the two best polynomial features and so on is determined. In this way the optimum number of polynomial parameters is selected, as being the middle way between having enough features to describe the data but not over-fitting. A regression model with 12 polynomial features was found to have the best accuracy when evaluated in this way. The model was determined by fitting the selected regression model to the entire data, giving the following expression:
 
 \input{equations/polynom_complex}
-The features are all nonedimensional.
+All the inputs with length scale ($T$, $B_{KB}, $B_{KL}$, $beam$) are nondimenilaized with $L_{pp}$. $V$ is nondimenionalized using $\sqrt{L_{pp}$. The middsection coefficients $A_0$ and block coefficients $C_b$ are already nondimensional. The roll amplitude $\phi_a$ is in radians.
+
 
 \subsection{Correction based on Ikeda's method}
-Work has been conducted to propose a correction to the SI-method based on the findings in this paper. The idea is to find correction factors that can be applied to the roll damping components calculated with the SI-method. In order to handle the problem of $\hat{B_e}$ accuracy being very much depending on the roll amplitude a roll amplitude correction factor has also added. The correction factors have been determined by fitting a linear regression model to the roll damping components, calculated with the SI-method at roll amplitudes between 0 and 10 degrees, giving the following expression: 
+The second approach uses the SI-method as is, but then apply some corrections to the output damping components. A roll amplitude correction factor was also added. The correction factors have been determined by fitting a linear regression model to the roll damping components giving the following expression: 
 \input{equations/polynom_correction}
-The proposed correction factors reduce $\hat{B_{BK}}$ and $\hat{B_{W}}$, removes $\hat{B_{E}}$ and $\hat{B_{L}}$ is not corrected much.
+The proposed correction factors implies that $\hat{B_{BK}}$ and $\hat{B_{W}}$ should be reduced, $\hat{B_{E}}$ should be made negative and $\hat{B_{L}}$ is not corrected much.
 
 \input{4_ML-method_for_prediction_of_roll_damping/regression}
