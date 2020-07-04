@@ -1,19 +1,15 @@
 \subsection{Overall accuracy of Simplified Ikeda method}
 \label{se:overall_comparison}
 An investigation of how well the implementation of the SI-method (see section \ref{se:semi-empirical methods}) agree with the corresponding results in the roll damping database has been carried out. 
-
 Comparing roll damping is a bit difficult since the roll damping model consist of two coefficients, a linear term $B_1$ and a quadratic term $B_2$. These coefficients can be combined by calculating the equivalent damping coefficient for a certain roll angle $\phi_a$ \parencite{himeno_prediction_1981}:
 
 \input{equations/B_e_equation}
-For the roll damping database $B_1$ and $B_2$ can be inserted directly into the Eq. (\ref{eq:B_e_equation}) to get the equivalent roll damping $B_e$.
-
-In order to obtain the same coefficients for the SI-method, roll damping was calculated for two roll amplitudes $\phi_a$ for the same motion frequency. $B_1$ and $B_2$ are obtained by fitting the Eq. (\ref{eq:B_e_equation}) to this data. The $B_e$ coefficient was made non-dimensional according to \parencite{himeno_prediction_1981}  giving the non-dimensional equivalent linear damping coefficient $\hat{B_e}$, which was more convenient to use for this comparison as follows,
+For the roll damping database $B_1$ and $B_2$ can be inserted directly into the Eq.(\ref{eq:B_e_equation}) to get the equivalent roll damping $B_e$.
+In order to obtain the same coefficients for the SI-method, roll damping was calculated for two roll amplitudes $\phi_a$ for the same motion frequency. $B_1$ and $B_2$ are obtained by fitting the Eq.(\ref{eq:B_e_equation}) to this data. The $B_e$ coefficient was made non-dimensional according to \parencite{himeno_prediction_1981}  giving the non-dimensional equivalent linear damping coefficient $\hat{B_e}$, which was more convenient to use for this comparison as follows,
 \begin{equation} \label{eq:be_eqvalent}
     \hat{B_e} = \frac{B_e}{\rho \bigtriangledown Beam^2} \sqrt{\frac{Beam}{2g}}
 \end{equation}
 where $\rho$, $\bigtriangledown$ and $Beam$ stand for fluid density, displacement volume and breadth of a ship, respectively.
-
-
 For the roll decay tests at SSPA, i.e., the database used in this study, the initial roll angle is normally set to 10 degrees, so that the model test data contain amplitudes in the range between 0 and 10 degrees. The root mean squared error of the equivalent roll damping, $RMSE_{\hat{B}_e}$, for various initial roll angles $\hat{B}_e(\phi_a)$ between estimation by the SI-method and the model test results is,
 
 \begin{equation} \label{eq:rmse}
@@ -37,14 +33,14 @@ It was found that almost all ships in the roll damping database were outside the
   \item the ``limited" approach where the limit boundary values were used for exceeding values.
 \end{enumerate}
 
-Figure \ref{fig:ikeda_limited} show the comparison of roll damping predictions by the SI-method at 2 degrees roll amplitude, using the ``unlimited" and ``limited" approach with the corresponding results from model tests. The ``limited" approach seems to be the best one to use according to this figure, where the ``unlimited" approach has values very far away from the model test results (far away from the red reference line).   
-The large deviations with the ``unlimited" approach seem to originate from the wave damping coefficient $\hat{B_W}$ according to Fig. \ref{fig:ikeda_components}. Also the bilge keel damping coefficient $\hat{B_{BK}}$ seems to suffer from extrapolation when the ``unlimited" approach is used. 
+Fig.\ref{fig:ikeda_limited} show the comparison of roll damping predictions by the SI-method at 2 degrees roll amplitude, using the ``unlimited" and ``limited" approach with the corresponding results from model tests. The ``limited" approach seems to be the best one to use according to this figure, where the ``unlimited" approach has values very far away from the model test results (far away from the red reference line).   
+The large deviations with the ``unlimited" approach seem to originate from the wave damping coefficient $\hat{B_W}$ according to Fig.\ref{fig:ikeda_components}. Also the bilge keel damping coefficient $\hat{B_{BK}}$ seems to suffer from extrapolation when the ``unlimited" approach is used. 
 
 \begin{figure}[H]
 \vspace{-0.5cm}
 \centering
   \centering
-  \includegraphics[height=5cm, width = 10cm]{figures/ikeda_limited.eps}
+  \includegraphics[]{figures/ikeda_limited.eps}
   \vspace{-0.5cm}
   \caption{$\hat{B_e}$ at all speeds estimated by the simplified Ikeda's method (Y-axis) in comparison with that from the roll decay test database (X-axis)}
   \label{fig:ikeda_limited}
@@ -62,4 +58,4 @@ The large deviations with the ``unlimited" approach seem to originate from the w
 \end{figure}
 
 \textbf{\textit{Remarks:}} From the above analysis, it is found that the SI-method was built based on very old ships, while the dimensions of modern ships are mostly beyond the limits that can be applied by this method. This makes the prediction by the SI-method differ significantly from the model test results.
-Therefore, it is an urgent task to propose either a complete new method to replace SI-method, or make corrections to the SI-method to be able to accurate predict a modern ship's roll damping coefficients. A preliminary attempt will be tested in the following section based on the SSPA model test database.
+Therefore, it is an urgent task to propose either a complete new method to replace SI-method, or make corrections to the SI-method to be able to accurately predict a modern ship's roll damping coefficients. A preliminary attempt will be tested in the following section based on the SSPA model test database.
