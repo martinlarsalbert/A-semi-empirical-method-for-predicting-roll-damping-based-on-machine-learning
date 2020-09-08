@@ -1,0 +1,25 @@
+\section{Regression method based on SSPA database}
+\label{se:correction_SI_method}
+In order to improve the accuracy of the roll damping prediction, the SSPA database containing more than 250 roll decay tests with modern ships is used to propose new models. In the following preliminary investigation, two different approaches are used to build such a model for roll damping prediction. The model is assumed to be a function of the same input parameters as the SI-method (see Eq.(\ref{eq:S1-method})). It was found in section \ref{se:overall_comparison} that the $B_e$ coefficient changes a lot with the roll amplitude $\phi_a$ which introduces a challenge to this regression. Three different options to approach this were considered:
+\begin{itemize}
+    \item Calculate $B_e$ for only one representative value of $\phi_a$.
+    \item Split the problem into two regressions, one for $B_1$ and one for $B_2$.
+    \item Calculate $B_e$ for a range of $\phi_a$ and include all in the regression.
+\end{itemize}
+The first option was rejected because that would generate a model that works for one roll amplitude only. The second option was rejected because introducing two regression models was considered unnecessary complex. And it was also suspected that there could be correlations between $B_1$ and $B_2$ so that the two regressions needed to be connected in some way. So the third option was used which means that the $B_e$ used in the regression contains roll amplitudes between 0 and 10 degrees.  
+
+\subsection{New regression model for roll damping}
+The first approach assumes that the function can be expressed as a second order polynomial. Some statistical learning method is used to establish the regression model. The input parameters (the features) are first transformed into polynomial features including all possible coupling terms. The best polynomial features are selected using a feature selection algorithm, selecting the k-best features \parencite[]{noauthor_sklearnfeature_selectionselectkbest_nodate} with a linear model for testing the individual effect of each feature \parencite[]{noauthor_sklearnfeature_selectionf_regression_nodate}. 
+
+Cross validation, as described in section \ref{se:cross_validation} below, is used to estimate the accuracy. The optimum number of polynomial features was determined by finding the "k-value" with the highest accuracy in the cross validation. A regression model with 12 polynomial features was found to have the best accuracy when evaluated in this way. The model was determined by fitting the selected regression model to the entire data, giving the following expression:
+
+\input{equations/polynom_complex}
+All the inputs with length scale ($T$,$OG$, $BK_{B}, $BK_{L}$, $beam$) are nondimenilaized with $L_{pp}$. $V$ is nondimenionalized using $\sqrt{L_{pp}$. The middsection coefficients $A_0$ and block coefficients $C_b$ are nondimensional. The roll amplitude $\phi_a$ is in radians.
+
+
+\subsection{Correction of Simplified Ikeda's method}
+The second approach uses the SI-method as is, but then applies some corrections to the output damping components. A roll amplitude correction factor was also added. The correction factors was determined by fitting a linear regression model to the roll damping components giving the following expression: 
+\input{equations/polynom_correction}
+The proposed correction factors implies that $\hat{B_{BK}}$ and $\hat{B_{W}}$ should be reduced, $\hat{B_{E}}$ should be made negative and $\hat{B_{L}}$ does not need much correction.
+
+\input{4_ML-method_for_prediction_of_roll_damping/regression}
