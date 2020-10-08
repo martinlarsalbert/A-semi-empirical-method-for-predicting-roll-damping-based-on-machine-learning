@@ -13,7 +13,8 @@ A simplified Ikeda's method (SI-method) was proposed by \parencite{kawahara_simp
 
 \input{equations/simplified_ikeda_equation}
 
-The detailed formulas within $f$ can be referred to\parencite{ikeda_velocity_1979, kawahara_simple_2011}. It should be noted that this method may be only efficiently used to estimate the roll damping of ships with the following boundaries \parencite{kawahara_simple_2011}:
+The detailed formulas within $f$ can be referred to\parencite{ikeda_velocity_1979, kawahara_simple_2011} and the implementation used in this paper  \parencite{alexandersson_martinlarsalbertrolldecay-estimators_2020}.
+It should be noted that this method may be only efficiently used to estimate the roll damping of ships with the following boundaries \parencite{kawahara_simple_2011}:
 \begin{equation}
     \label{eq:SI_limits}
      \left\{
@@ -32,8 +33,6 @@ The detailed formulas within $f$ can be referred to\parencite{ikeda_velocity_197
 \end{equation}
 
 where $C_b$, $\omega$, $A_0$ represent a ship's block coefficient, angular frequency of roll motion, Middle ship area;  $Beam$, $T$, $L_{pp}$, $OG$, $BK_B$, $BK_L$ represent a ship's beam, mean draft, length between perpendiculars, distance from roll axis to still water level, bilge keel height and bilge keel length, respectively.
-
-
 
 %and the actual implementation \parencite{alexandersson_martinlarsalbertrolldecay-estimators_2020}.
 
