@@ -34,7 +34,16 @@ The detailed formulas within $f$ can be referred to\parencite{ikeda_velocity_197
 where $C_b$, $\omega$, $A_0$ represent a ship's block coefficient, angular frequency of roll motion, Middle ship area;  $Beam$, $T$, $L_{pp}$, $OG$, $BK_B$, $BK_L$ represent a ship's beam, mean draft, length between perpendiculars, distance from roll axis to still water level, bilge keel height and bilge keel length, respectively.
 
 
+
 %and the actual implementation \parencite{alexandersson_martinlarsalbertrolldecay-estimators_2020}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=6in, height = 8in ]{figures/SI-sensitivity.eps}
+        \vspace{-0.5cm}
+    \caption{Input parameter variation of the SI-method}
+    \label{fig:SI_sensitivity}
+\end{figure}
 
 %The Simplified Ikeda method \cite{kawahara_simple_2011} has been implemented \cite{alexandersson_martinlarsalbertrolldecay-estimators_2020} with the intention to be used both as a benchmark and maybe also as a sub-component of a new method. The examples from \cite{kawahara_simple_2011} was recalculated to check that the method has been implemented correctly. The authors have been unable to find other ways to validate the implementation, which introduces some uncertainty to the comparisons. The method has been implemented as a function where the total roll damping and its component is calcultated: 
 
