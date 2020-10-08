@@ -14,7 +14,7 @@ A simplified Ikeda's method (SI-method) was proposed by \parencite{kawahara_simp
 \input{equations/simplified_ikeda_equation}
 
 The detailed formulas within $f$ can be referred to\parencite{ikeda_velocity_1979, kawahara_simple_2011} and the implementation used in this paper  \parencite{alexandersson_martinlarsalbertrolldecay-estimators_2020}.
-It should be noted that this method may be only efficiently used to estimate the roll damping of ships with the following boundaries \parencite{kawahara_simple_2011}:
+It should be noted that this method may be only efficiently used to estimate the roll damping of ships within the following boundaries \parencite{kawahara_simple_2011}:
 \begin{equation}
     \label{eq:SI_limits}
      \left\{
@@ -32,7 +32,7 @@ It should be noted that this method may be only efficiently used to estimate the
     \right.
 \end{equation}
 
-The input parameters to the SI-method where varied between the limits. \ref{fig:SI_sensitivity}
+In order to study the behaviour of the SI-method the input parameters were varied. Input parameters corresponding to a ship in the middle of the database was selected as the starting point of this variation. The parameters where then varied, one at the time, between the minimum and maximum values in the database. Figure \ref{fig:SI_sensitivity} shows the result from this variation, where also the input boundaries (Eq.  \ref{eq:SI_limits}) are shown. Histograms for each parameter is also shown in this figure, indicating where the ships are on this axis. It can be noted that the wave damping $B_W$ has the largest contribution to the total roll damping.
 
 %where $C_b$, $\omega$, $A_0$ represent a ship's block coefficient, angular frequency of roll motion, Middle ship area;  $Beam$, $T$, $L_{pp}$, $OG$, $BK_B$, $BK_L$ represent a ship's beam, mean draft, length between perpendiculars, distance from roll axis to still water level, bilge keel height and bilge keel length, respectively.
 
@@ -40,7 +40,7 @@ The input parameters to the SI-method where varied between the limits. \ref{fig:
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=6in, height = 8in ]{figures/SI-sensitivity.eps}
+    \includegraphics[width=6in, height = 8in ]{figures/SI-sensitivity.pdf}
         \vspace{-0.5cm}
     \caption{SI-method input parameter variation and data base ships}
     \label{fig:SI_sensitivity}
