@@ -32,20 +32,6 @@ It should be noted that this method may be only efficiently used to estimate the
     \right.
 \end{equation}
 
-In order to study the behaviour of the SI-method the input parameters were varied. Input parameters corresponding to a ship in the middle of the database was selected as the starting point of this variation. The parameters where then varied, one at the time, between the minimum and maximum values in the database. Figure \ref{fig:SI_sensitivity} shows the result from this variation, where also the input boundaries (Eq.  \ref{eq:SI_limits}) are shown. Histograms for each parameter is also shown in this figure, indicating where the ships are on this axis. It can be noted that the wave damping $B_W$ has the largest contribution to the total roll damping.
-
-%where $C_b$, $\omega$, $A_0$ represent a ship's block coefficient, angular frequency of roll motion, Middle ship area;  $Beam$, $T$, $L_{pp}$, $OG$, $BK_B$, $BK_L$ represent a ship's beam, mean draft, length between perpendiculars, distance from roll axis to still water level, bilge keel height and bilge keel length, respectively.
-
-%and the actual implementation \parencite{alexandersson_martinlarsalbertrolldecay-estimators_2020}.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=6in, height = 8in ]{figures/SI-sensitivity.pdf}
-        \vspace{-0.5cm}
-    \caption{SI-method input parameter variation and data base ships}
-    \label{fig:SI_sensitivity}
-\end{figure}
-
 %The Simplified Ikeda method \cite{kawahara_simple_2011} has been implemented \cite{alexandersson_martinlarsalbertrolldecay-estimators_2020} with the intention to be used both as a benchmark and maybe also as a sub-component of a new method. The examples from \cite{kawahara_simple_2011} was recalculated to check that the method has been implemented correctly. The authors have been unable to find other ways to validate the implementation, which introduces some uncertainty to the comparisons. The method has been implemented as a function where the total roll damping and its component is calcultated: 
 
 
