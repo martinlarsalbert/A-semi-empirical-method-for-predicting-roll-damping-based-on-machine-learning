@@ -2,16 +2,8 @@
 \label{se:accuracy_SI_method}
 Some studies for instance \parencite{soder_assessment_2019} show that the Ikeda's method is not capable to accurately predict the roll damping for some modern ship cases. The SI-method being the simplified version of Ikeda's method most likely inherits its problems but also introduces some extrapolation errors as reported by \parencite{rudakovic_application_2017}. In the following, 227 existing roll decay model tests conducted at SSPA Maritime Dynamics Laboratory are used to validate the SI-method. The comparison will help to identify the drawbacks and improvement potentials of the SI-method. It aims at further developing this method to increase its accuracy based on the large test database through some statistical regression analysis.
 
-Prior to the validation the behaviour of the SI-method was studied by varying the input parameters between minimum and maximum values in database around a point "reference ship" with values in the middle of the input boundaries (Eq. \ref{eq:SI_limits}) (see figure \ref{fig:SI_sensitivity}). It can be seen that the wave damping $B_W$ increases a lot with the absolute value of $OG/T$. It can also be seen the the wave damping has an enormous increase when the beam to draught ratio exceeds the input boundary, which seems to be the case for at least one third of the roll decay tests. It can also be noted that most of the ships in the database have midsection coefficients $A_0$ and bilge keel heights that exceed the limit. 
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=6in, height = 6in ]{figures/SI-sensitivity.pdf}
-        \vspace{-0.5cm}
-    \caption{SI-method input parameter variation and data base ships}
-    \label{fig:SI_sensitivity}
-\end{figure}
-
 \input{3_database_of_roll_decay_tests/overall_comparison_ikeda_tests}
+
+\input{3_database_of_roll_decay_tests/sensitive_SI}
 
 \input{3_database_of_roll_decay_tests/ikeda}
