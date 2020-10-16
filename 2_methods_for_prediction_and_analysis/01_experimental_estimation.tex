@@ -1,7 +1,8 @@
 \subsection{Estimation of roll damping from roll decay tests}
 \label{se:experimental_estimation}
 The roll decay test has the benefit of that both roll damping and the natural frequency $\omega_0$ can be observed, but the drawback that roll damping at only this one frequency can be obtained. In order to extract roll damping parameters from the roll decay tests, parameters in the cubic, quadratic or linear roll decay models should be identified. The roll angle is measured during the roll decay tests. The system identification is defined as finding the parameters that produce a simulated roll signal that best fits the roll decay test measurement. 
-To evaluate the performed tests, a modified version of the PIT approach is developed. 
+%To evaluate the performed tests, a modified version of the PIT approach is developed. 
+%The ``Derivation approach" has the advantage of being very much faster than the ''Integration approach" but also the disadvantage of needing to calculate the numerical derivatives which for measurement data also requires some low pass filtration. The "Integration approach" may however also have a disadvantage of not converging.
 
 
 
@@ -25,21 +26,15 @@ To evaluate the performed tests, a modified version of the PIT approach is devel
 
 %\subsection{Parameter Identification Technique}
 %\label{se:PIT}
-It should be noted that even though the approach could well handle roll equations with higher order of non-linearities in the damping term as well as a non-linear restoring term, the limited amplitudes at which the roll decay tests were conducted cannot motivate advantages of higher order models. 
+Two different solution approaches have been investigated for the system identification, i.e., the "Derivation approach" and "Integration approach". In the ``Derivation approach" the first and second roll time derivatives are calculated numerically so that the parameters in the models are the only unknowns and the optimal parameters that gives the best fit can simply be determined using a least square fit.
+In the ``Integration approach" the parameters are found by solving a nonlinear least-squares problem using the least-square method. This approach requires that ordinary differential equation is solved for many ``guessed" sets of parameters till the solution converges.
+
+It should be noted that even though the approach could well handle roll equations with higher order of non-linearities in the damping term as well as a non-linear restoring term, the limited amplitudes at which the roll decay tests were conducted cannot motivate advantages of higher order models. A validation of the developed parameter identification method has been conducted by checking that parameters from simulated signals with the linear, quadratic and cubic model  (where the parameters are already known) can be identified correctly. 
 The goodness of the fit is described using the coefficient of determination:
 \begin{equation} \label{eq:R2}
-R^2=1-\frac{SS_{res}}{SS_{tot}}
+%R^2=1-\frac{SS_{res}}{SS_{tot}}
+R^2=1-\frac{\sum\limit_{i=1}^{n}(y_i-\hat{y}_i)^2}{\sum\limit_{i=1}^{n}(y_i-\bar{y})^2}
 \end{equation}
-where $SS_{res}$ is sum of squares of residuals and $SS_{tot}$ is total sum of squares. Two different solution approaches have been investigated for the system identification: a "Derivation approach" and an "Integration approach". 
-The "Derivation approach" has the advantage of being very much faster than the "Integration approach" but also the disadvantage of needing to calculate the numerical derivatives which for measurement data also requires some low pass filtration. The "Integration approach" may however also have a disadvantage of not converging.
-
-
-
-In the "Derivation approach" the first and second roll time derivatives are calculated numerically so that the parameters in the models are the only unknowns and the optimal parameters that gives the best fit can simply be determined using a least square fit.
-In the "Integration approach" the parameters are found by solving a nonlinear least-squares problem using the least-square method \parencite{noauthor_scipyoptimizeleast_squares_nodate} and the Trust Region Reflective algorithm with smooth approximation of l1 (absolute value). This approach requires that ordinary differential equation is solved for many "guessed" sets of parameters till the solution converges.
-
-A validation of the developed parameter identification method has been conducted by checking that parameters from simulated signals with the linear, quadratic and cubic model  (where the parameters are already known) can be identified correctly. 
-
-    
+where $y_i$, $\bar y$, $\hat{y}_i$ represents the motion angle $\phi$, mean of $\phi$ from the model tests, and estimated $\phi$ by the system identification method, while they represent the damping coefficients in the Section 3.      
 
 
