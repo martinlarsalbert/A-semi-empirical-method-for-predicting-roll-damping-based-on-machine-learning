@@ -6,40 +6,12 @@ Comparing results from the SI-method with corresponding results with the origina
 When comparing the damping components from SI and Ikeda (Fig.\ref{fig:component_residual}) $B_W$ seem to be the main cause of the SI error. When also looking how the error changes with input parameters (Fig.\ref{fig:parameter_residual}) it seems that the error is large when the beam to draught ratio (and consequently also $\hat{\omega}$) is large. This is shown in more detailed in figure \ref{fig:beam_T_residual} where the error is increasing when the beam to draught ratio is above 4.5. This makes a lot of sense when looking back on the input parameter variation in figure \ref{fig:SI_sensitivity} where enormous values of $B_W$ were observed above this value, which also happens to be the limit value according to Eq.\ref{eq:SI_limits}.
 
 \begin{figure}[H]
+
     \centering
-    \begin{subfigure}[b]{0.5\textwidth}
-        \centering
-        \includegraphics[]{figures/si_ikeda_model.eps}
-        \caption{Comparison SI, Ikeda and model tests}
-        \label{fig:si_ikeda_model}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/component_residual.eps}
-        \caption{Residual vs. components}
-        \label{fig:component_residual}
-    \end{subfigure}
-    \newline
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/parameter_residual.eps}
-        \caption{Residual vs. parameters}
-        \label{fig:parameter_residual}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{figures/beam_T_residual.eps}
-        \caption{Beam to draught vs. residual}
-        \label{fig:beam_T_residual}
-    \end{subfigure}
-    
-    \caption{Analysis of the residual error of $\hat{B}_e^{SI}$ at 10 degrees roll angle compared to model test and Ikeda.}\label{fig:validation}
+    \includegraphics[width=0.5\textwidth]{figures/si_ikeda_model.eps}
+    \caption{Comparison SI, Ikeda and model tests}
+    \label{fig:si_ikeda_model}
+
 \end{figure}
 
 \input{equations/si_ikeda_validation}
