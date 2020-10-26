@@ -44,8 +44,17 @@
 \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
 %----------------------------------------------
 
-\usepackage[style=authoryear-ibid,backend=biber, maxnames=2]{biblatex}
-%\usepackage[style=apa,backend=biber,maxnames=2]{biblatex}
+%\usepackage[style=authoryear-ibid,backend=biber, maxnames=2]{biblatex}
+%\AtEveryBibitem{\clearfield{note}\clearfield{addendum}}
+%\AtEveryCitekey{\clearfield{note}\clearfield{addendum}}
+\usepackage[style=apa,
+    backend=biber,
+    maxnames=2
+    url=false,
+    doi=false,
+    ]{biblatex}
+
+
 %\usepackage[style=chicago-authordate,backend=biber]{biblatex}
 
 
