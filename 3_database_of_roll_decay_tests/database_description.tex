@@ -2,7 +2,7 @@ Roll-decay model tests are normally performed prior to other dynamic tests, such
 
 
 The parameter identification technique was used to estimate the roll damping coefficients from the roll-decay tests. It was investigated whether the linear model Eq.( \ref{eq:roll_decay_equation_himeno_linear}), quadratic model Eq.(\ref{eq:roll_decay_equation_himeno_quadratic_b}) or cubic model Eq.(\ref{eq:roll_decay_equation_cubic}) was best suited to describe the roll damping in all the tests to formulate the roll damping database. After the parameters were identified, the corresponding roll motions were simulated by the three mentioned models. The accuracy of the three models was evaluated with the $R^2$ score coefficient, based on model test and simulation time series of roll motions.
-The average $R^2$ was 0.995 for the cubic model, 0.993 for the quadratic, and 0.986 for the linear model. In addition, Fig. \ref{fig:roll_decay_model_compare} shows a comparison between the models for one of the roll-decay tests. It can be seen that the linear model can not give a good representation of the whole range of roll motions, and the difference becomes obvious after the time of 30s. Since the quadratic model has almost the same accuracy as the cubic model it was selected to estimate roll damping from all the roll-decay tests in the database. All the extracted roll damping coefficients together with various ship related information will be formulated as the roll damping database for the following analysis.
+The average $R^2$ was 0.995 for the cubic model, 0.993 for the quadratic, and 0.986 for the linear model. Fig.\ref{fig:roll_decay} displays a linear, a quadratic and a cubic model fitted to one roll decay model test. It is obvious that the linear model, being a straight line in Fig.\ref{fig:roll_decay_damping}, under predicts the damping for large angles and over predicts for small angles as can be seen in Fig.\ref{fig:roll_decay_damping}. Since the quadratic model has almost the same accuracy as the cubic model it was selected to estimate roll damping from all the roll-decay tests in the database. All the extracted roll damping coefficients together with various ship related information will be formulated as the roll damping database for the following analysis.
 
 \begin{figure}[H]
     \centering
@@ -12,23 +12,22 @@ The average $R^2$ was 0.995 for the cubic model, 0.993 for the quadratic, and 0.
 \end{figure}
 
 \begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
-  
-        \includegraphics[width=3.5in,height=3in]{figures/roll_decay_amplitude.eps}
-        \caption{SI-method with and outside limits vs. model tests}
-        \label{fig:si_model_within}
+        \includegraphics[]{figures/roll_decay_amplitude.eps}
+        \caption{Amplitude decrements}
+        \label{fig:roll_decay_amplitude}
     \end{subfigure}
         ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.48\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \centering
-        \includegraphics[width=3.5in,height=3in]{figures/roll_decay_damping.eps}
-        \caption{Residual vs. components}
-        \label{fig:component_residual}
+        \includegraphics[]{figures/roll_decay_damping.eps}
+        \caption{Dampings}
+        \label{fig:roll_decay_damping}
     \end{subfigure}
-    
+    \caption{Roll decay model test, linear-, quadratic- and cubic-model}
+    \label{fig:roll_decay}
 \end{figure}
 
 
