@@ -13,8 +13,30 @@ The average $R^2$ was 0.995 for the cubic model, 0.993 for the quadratic, and 0.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=12cm, height = 6cm ]{figures/roll_decay_model_compare.eps}
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+  
+        \includegraphics[width=\textwidth]{figures/roll_decay_amplitude.eps}
         \vspace{-0.5cm}
-    \caption{Roll-decay test comparison of linear (bottom), quadratic (middle) and cubic model (upper).}
-    \label{fig:roll_decay_model_compare}
+        \caption{SI-method with and outside limits vs. model tests}
+        \label{fig:si_model_within}
+    \end{subfigure}
+        ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/roll_decay_damping.eps}
+        \caption{Residual vs. components}
+        \label{fig:component_residual}
+    \end{subfigure}
+    
 \end{figure}
+
+
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=12cm, height = 6cm %]{figures/roll_decay_model_compare.eps}
+%        \vspace{-0.5cm}
+%    \caption{Roll-decay test comparison of linear (bottom), quadratic %(middle) and cubic model (upper).}
+%    \label{fig:roll_decay_model_compare}
+%\end{figure}
