@@ -11,8 +11,6 @@ The first option was rejected because that would generate a model that works for
 \subsection{Correction of the simplified Ikeda's method}
 The first approach uses the SI-method as is, but then applies some corrections to the output damping components. A roll amplitude correction factor was also added. The correction factors were determined by fitting a linear regression model to the roll damping components, giving the following expression: 
 \input{equations/polynom_correction}
-The proposed correction factors implies that $\hat{B_{BK}}$ and $\hat{B_{W}}$ should be reduced; $\hat{B_{E}}$ should be made negative and $\hat{B_{L}}$ does not need much correction.
-
 
 \subsection{New regression model for roll damping}
 An alternative approach assumes that the function can be expressed as a second-order polynomial. Some statistical learning method is used to establish the regression model. The input parameters (the features) are first transformed into polynomial features including all possible coupling terms. The best polynomial features are selected using a feature selection algorithm and selecting the ``k-best'' features with a linear model for testing the individual effect of each feature. 
